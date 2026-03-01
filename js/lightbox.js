@@ -27,7 +27,6 @@
 
   const thumbs = Array.from(thumbsWrap.querySelectorAll(".thumb"));
 
-  // ✅ fotos = [hero] + [thumbs] => total 4 (en tu caso 1 + 3)
   const photos = [
     hero.getAttribute("src"),
     ...thumbs.map((btn) => btn.dataset.full),
@@ -79,14 +78,21 @@
     setLightbox(index + 1);
   });
 
-  // ✅ Cerrar (X o backdrop) con delegación
+  // Cerrar
   lightbox.addEventListener("click", (e) => {
-    // si clickeás algo que tenga data-close (backdrop o botón X)
+    const dialog = lightbox.querySelector(".lightbox-dialog");
+
+    // cerrar si clickeás botón con data-close (la X)
     if (e.target.closest("[data-close]")) {
+      closeLightbox();
+      return;
+    }
+
+    // cerrar si clickeás fuera del dialog
+    if (!dialog.contains(e.target)) {
       closeLightbox();
     }
   });
-
   // Teclado
   document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("is-open")) return;
