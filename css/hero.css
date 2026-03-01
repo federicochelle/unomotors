@@ -1,0 +1,176 @@
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+  min-height: 68vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  color: #fff;
+  background: url("../assets/hero.jpg") bottom / cover no-repeat;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.55) 0%,
+
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  z-index: 0;
+}
+
+/* Overlay SOLO MOBILE */
+@media (max-width: 1023px) {
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.28) 45%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+    z-index: 0;
+  }
+}
+
+/* Contenido arriba del overlay */
+.hero-inner,
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  color: #fff;
+  max-width: 18ch;
+}
+
+.hero .text-muted {
+  color: rgb(255, 255, 255);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  font-weight: 500;
+}
+
+/* Botones: solo mobile/tablet (en desktop los ocultás) */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3.25rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-actions,
+  .mobile-cta {
+    display: none;
+  }
+}
+
+/* =========================
+   HERO CARDS MONTADAS (desktop)
+========================= */
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-bottom: 7rem; /* aire para el “montaje” */
+  }
+
+  .hero-cards {
+    margin-top: -9rem;
+    position: relative;
+    z-index: 20;
+  }
+}
+
+/* Mobile: ocultas */
+@media (max-width: 1023px) {
+  .hero-cards {
+    display: none;
+  }
+}
+
+/* =========================
+   CARD + ICON FLOAT
+========================= */
+
+.card {
+  position: relative;
+  overflow: visible;
+  padding-top: 3.25rem; /* espacio para el icono flotante */
+}
+
+.hero-icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+
+  display: grid;
+  place-items: center;
+
+  border: 6px solid var(--color-surface); /* aro blanco mockup */
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hero-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* =========================
+   COLORES POR CARD (modifiers)
+========================= */
+
+/* BUY */
+.card--buy .hero-icon,
+.card--buy .btn {
+  background: var(--brand-blue);
+  color: #fff;
+  border-color: transparent;
+}
+
+.card--buy .btn:hover {
+  background: var(--brand-blue-dark);
+}
+
+/* SELL */
+.card--sell .hero-icon,
+.card--sell .btn {
+  background: var(--brand-green);
+  color: #fff;
+  border-color: transparent;
+}
+
+.card--sell .btn:hover {
+  background: var(--brand-green-dark);
+}
+
+/* CALC */
+.card--calc .hero-icon,
+.card--calc .btn {
+  background: var(--brand-yellow);
+  color: #111;
+  border-color: transparent;
+}
+
+.card--calc .btn:hover {
+  background: var(--brand-yellow-dark);
+  color: #111;
+}

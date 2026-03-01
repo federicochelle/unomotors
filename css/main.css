@@ -1,0 +1,69 @@
+/* =========================
+   1. BASE (reset + variables)
+========================= */
+@import "base.css";
+
+/* =========================
+   2. LAYOUT (estructura)
+========================= */
+@import "layout.css";
+
+/* =========================
+   3. COMPONENTS (navbar, botones, cards)
+========================= */
+@import "components.css";
+@import "navbar.css";
+
+/* =========================
+   4. PAGES / SECTIONS (hero, landing)
+========================= */
+@import "hero.css";
+@import "catalogo.css";
+@import "vender.css";
+@import "simulador.css";
+
+/* =========================
+   5. OVERRIDES / FIXES (siempre al final)
+========================= */
+@import "overrides.css";
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #000000;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ligeramente más arriba */
+.loader-brand {
+  transform: translateY(-6%);
+}
+
+/* triángulo grande e invisible al inicio */
+.loader-play {
+  width: min(36vw, 420px);
+  height: auto;
+  opacity: 0;
+  transform-origin: 50% 50%;
+  filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+}
+
+/* stroke más fino */
+.play-stroke {
+  fill: none;
+  stroke: #f2f2f2;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

@@ -1,0 +1,83 @@
+.loan-section {
+  padding: 4rem 0;
+}
+
+.loan-header {
+  margin-bottom: 2.5rem;
+}
+
+.loan-title {
+  /* un toque más grande y fluido */
+  font-size: clamp(1.9rem, 1.2rem + 1.6vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.loans-subtitle {
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+}
+
+/* GRID */
+.loan-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: stretch; /* todas las cards misma altura visual */
+}
+
+.loan-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+
+  padding: 1.25rem;
+  border-radius: 14px;
+
+  /* si querés tarjeta, dejalo; si no, borrá estas 2 */
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* BLOQUE DEL LOGO: esto es lo que alinea todo */
+.loan-logo {
+  height: 110px; /* mismo espacio para todos */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.loan-logo img {
+  max-height: 80px; /* tamaño visual uniforme */
+  max-width: 170px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* el botón siempre abajo */
+.loan-card .btn {
+  margin-top: auto;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .loan-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem;
+  }
+
+  .loan-logo {
+    height: 140px;
+  }
+
+  .loan-logo img {
+    max-height: 95px;
+    max-width: 200px;
+  }
+}
