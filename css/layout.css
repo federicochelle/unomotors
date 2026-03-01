@@ -41,6 +41,10 @@
   }
 }
 
+.section .container {
+  padding-inline: 2rem; /* margen visual cómodo */
+}
+
 /* =========================
    GRID
 ========================= */
