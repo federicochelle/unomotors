@@ -1,0 +1,316 @@
+/* =========================
+   FILTROS CATÁLOGO
+========================= */
+
+.filters-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* ===== Summary ===== */
+
+.filters-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filters-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Flecha */
+.filters-summary::after {
+  content: "▾";
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.filters-box[open] .filters-summary::after {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   ANIMACIÓN SUAVE
+========================= */
+
+.filters-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition:
+    grid-template-rows 0.35s ease,
+    opacity 0.25s ease;
+  opacity: 0;
+}
+
+.filters-content > * {
+  overflow: hidden;
+}
+
+.filters-box[open] .filters-content {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+/* =========================
+   GRID FILTROS
+========================= */
+
+.filters {
+  padding: 1.25rem;
+}
+
+.filters-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+.filters-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+/* Desktop grid */
+@media (min-width: 768px) {
+  .filters-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* =========================
+   CAMPOS
+========================= */
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.filter label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.filter select {
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.filter select:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.15);
+}
+
+/* Botón */
+.filter-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* =========================
+   DESKTOP → ABIERTO SIEMPRE
+========================= */
+
+@media (min-width: 1024px) {
+  .filters-box {
+    border-radius: 3px;
+  }
+
+  .filters-box .filters-summary {
+    display: none; /* ocultamos botón */
+  }
+
+  .filters-box {
+    open: true; /* NO funciona solo con CSS */
+  }
+
+  .filters-content {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+
+/* ✅ Evita que el grid empuje y se salga del box */
+.filters-content,
+.filters-grid,
+.filter,
+.filter-actions {
+  min-width: 0;
+}
+
+/* ✅ Si el details/box tiene padding grande, esto lo estabiliza */
+.filters-box {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* que nada se salga visualmente */
+}
+
+/* ✅ Los selects siempre dentro */
+.filter select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* (Opcional) si querés aire sin romper el ancho */
+.filters-content {
+  padding: var(--space-sm);
+}
+/* =========================
+   ANIMACIÓN SUAVE REAL
+========================= */
+
+.filters-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.25s ease;
+}
+
+/* Cuando está abierto */
+.filters-box[open] .filters-content {
+  max-height: 1000px; /* suficientemente grande */
+  opacity: 1;
+}
+
+/* Desktop: no se ve la caja, solo el contenido */
+@media (min-width: 1024px) {
+  .filters-box {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .filters-summary {
+    display: none; /* desaparece el “Filtros” */
+  }
+
+  .filters-content {
+    display: block !important; /* siempre visible */
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+}
+
+/* =========================
+   GRID
+========================= */
+
+.gallery-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* =========================
+   CARD
+========================= */
+
+.car-card {
+  background: #fff;
+  border: 1px solid #e4e6ea;
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.gallery-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.car-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.car-media img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   BODY
+========================= */
+
+.car-body {
+  padding: 1rem;
+}
+
+.car-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.car-sub {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.35rem;
+}
+
+.car-meta {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.car-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #7b1e1e; /* rojo tipo concesionaria */
+}
+
+.car-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.car-info {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,248 @@
+.back-link {
+  display: inline-block;
+  margin-top: 1.95rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+.auto-head {
+  margin-bottom: 1.5rem;
+}
+
+.auto-title {
+  font-size: clamp(1.6rem, 2.2vw + 1rem, 2.6rem);
+  line-height: 1.1;
+  margin: 0;
+}
+.auto-title span {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.auto-price {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.25rem, 1.2vw + 1rem, 1.9rem);
+  font-weight: 800;
+  color: var();
+}
+
+.auto-subtitle {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.auto-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.auto-gallery {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.auto-hero {
+  width: 100%;
+  height: clamp(220px, 40vw, 460px);
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.auto-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.auto-thumbs img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+.auto-specs {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.spec-list {
+  margin: 1rem 0 1.25rem;
+  display: grid;
+  gap: 0.6rem;
+}
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.03);
+}
+.spec-item dt {
+  color: var(--text-muted);
+}
+.spec-item dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.btn-full {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.auto-note {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+@media (min-width: 900px) {
+  .auto-layout {
+    grid-template-columns: 1.6fr 1fr;
+    align-items: start;
+  }
+  .auto-thumbs img {
+    height: 100px;
+  }
+}
+
+/* Thumbs como botones (mejor UX) */
+.auto-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.thumb {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.thumb img {
+  width: 100%;
+  height: 92px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+  opacity: 0.92;
+}
+
+.thumb:hover img {
+  transform: scale(1.02);
+  opacity: 1;
+}
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 999;
+}
+
+.lightbox.is-open {
+  display: block;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* clave: relative + overflow hidden */
+.lightbox-dialog {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: min(1000px, calc(100% - 2rem));
+  height: min(720px, calc(100% - 2rem));
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px;
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+
+  /* ✅ para que X/nav/counter queden perfectos */
+  position: relative;
+  overflow: hidden;
+}
+
+.lb-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* ✅ z-index para que no quede “debajo” de la imagen */
+.lb-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.lb-prev {
+  left: 18px;
+}
+.lb-next {
+  right: 18px;
+}
+
+.lb-counter {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  z-index: 5;
+}

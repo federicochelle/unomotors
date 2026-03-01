@@ -1,0 +1,241 @@
+/* =========================
+   HEADER + NAVBAR (limpio)
+========================= */
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: var(--header-bg, rgba(11, 15, 20, 0.95));
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  padding-block: 0.9rem;
+  gap: var(--space-sm);
+}
+
+.brand-logo-only {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  width: 140px;
+  height: 44px;
+  object-fit: contain;
+}
+
+/* =========================
+   INFO STRIP
+========================= */
+
+.info-strip {
+  background: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 10;
+  padding: 0.5rem 0;
+  font-size: 0.75rem;
+}
+
+.info-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 3vw, 2rem);
+  padding: 0 1rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.info-strip-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.info-strip-inner > * {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.info-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.info-google {
+  cursor: pointer;
+}
+
+.info-google:hover {
+  text-decoration: underline;
+  color: var(--color-text);
+}
+
+.icon {
+  width: 1.2em;
+  height: 1.2em;
+  opacity: 0.75;
+}
+
+/* =========================
+   NAV (links)
+========================= */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: var(--color-bg);
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-surface);
+}
+
+/* Desktop */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Toggle */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* =========================
+   HAMBURGER ICON
+========================= */
+
+.nav-toggle-lines {
+  position: relative;
+  width: 18px;
+  height: 2px;
+  background: var(--color-text);
+}
+
+.nav-toggle-lines::before,
+.nav-toggle-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: var(--color-text);
+}
+
+.nav-toggle-lines::before {
+  top: -6px;
+}
+
+.nav-toggle-lines::after {
+  top: 6px;
+}
+
+/* =========================
+   MOBILE MENU + OVERLAY
+========================= */
+
+/* Desktop: no existen */
+.site-header .menu-overlay,
+.site-header .mobile-menu {
+  display: none;
+}
+
+/* =========================
+   MOBILE (animado)
+========================= */
+
+@media (max-width: 900px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Ahora existen */
+  .site-header .menu-overlay,
+  .site-header .mobile-menu {
+    display: block;
+  }
+
+  /* Overlay */
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(2px);
+    z-index: 90;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+  }
+
+  /* Contenedor del menú */
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 110;
+
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+    will-change: opacity, transform;
+  }
+
+  .mobile-menu .nav-mobile {
+    max-width: 1200px;
+    margin-inline: auto;
+    background: var(--header-bg, rgba(11, 15, 20, 0.95));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Estado abierto */
+  .site-header.is-open .menu-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-header.is-open .mobile-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
