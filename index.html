@@ -10,60 +10,60 @@
   <body>
     <!-- Header -->
     <header class="site-header">
-  <div class="container flex flex-between flex-wrap header-inner">
-    <!-- Brand -->
-    <a class="brand brand-logo-only" href="#top" aria-label="Ir al inicio">
-      <img
-        class="brand-logo"
-        src="assets/logo.png"
-        alt="UnoMotors"
-        width="44"
-        height="44"
-        loading="eager"
-      />
-    </a>
+      <div class="container flex flex-between flex-wrap header-inner">
+        <!-- Brand -->
+        <a class="brand brand-logo-only" href="#top" aria-label="Ir al inicio">
+          <img
+            class="brand-logo"
+            src="assets/logo.png"
+            alt="UnoMotors"
+            width="44"
+            height="44"
+            loading="eager"
+          />
+        </a>
 
-    <!-- Nav desktop -->
-    <nav class="nav nav-desktop" aria-label="Navegación principal">
-      <a class="nav-link" href="#catalogo">Catálogo</a>
-      <a class="nav-link" href="#vender">Vendé tu auto</a>
-      <a class="nav-link" href="#simulador">Simulador</a>
-      <a class="nav-link" href="#footer">Contacto</a>
+        <!-- Nav desktop -->
+        <nav class="nav nav-desktop" aria-label="Navegación principal">
+          <a class="nav-link" href="#catalogo">Catálogo</a>
+          <a class="nav-link" href="#vender">Vendé tu auto</a>
+          <a class="nav-link" href="#simulador">Simulador</a>
+          <a class="nav-link" href="#footer">Contacto</a>
 
-      <!-- CTA opcional -->
-      <a class="btn btn-outline" href="#catalogo">Ver vehículos</a>
-    </nav>
+          <!-- CTA opcional -->
+          <a class="btn btn-outline" href="#catalogo">Ver vehículos</a>
+        </nav>
 
-    <!-- Botón hamburguesa (mobile) -->
-    <button
-      class="nav-toggle"
-      type="button"
-      aria-label="Abrir menú"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-      data-menu-toggle
-    >
-      <span class="nav-toggle-lines" aria-hidden="true"></span>
-    </button>
-  </div>
+        <!-- Botón hamburguesa (mobile) -->
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-menu-toggle
+        >
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
+      </div>
 
-  <!-- Overlay (mobile) -->
-  <div class="menu-overlay" data-menu-close hidden></div>
+      <!-- Overlay (mobile) -->
+      <div class="menu-overlay" data-menu-close hidden></div>
 
-  <!-- Menú mobile -->
-  <div class="mobile-menu" id="mobile-menu" hidden>
-    <nav class="nav nav-mobile" aria-label="Menú móvil">
-      <a class="nav-link" href="#catalogo" data-menu-close>Catálogo</a>
-      <a class="nav-link" href="#vender" data-menu-close>Vendé tu auto</a>
-      <a class="nav-link" href="#simulador" data-menu-close>Simulador</a>
-      <a class="nav-link" href="#footer" data-menu-close>Contacto</a>
+      <!-- Menú mobile -->
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav class="nav nav-mobile" aria-label="Menú móvil">
+          <a class="nav-link" href="#catalogo" data-menu-close>Catálogo</a>
+          <a class="nav-link" href="#vender" data-menu-close>Vendé tu auto</a>
+          <a class="nav-link" href="#simulador" data-menu-close>Simulador</a>
+          <a class="nav-link" href="#footer" data-menu-close>Contacto</a>
 
-      <a class="btn btn-outline" href="#catalogo" data-menu-close>
-        Ver vehículos
-      </a>
-    </nav>
-  </div>
-</header>
+          <a class="btn btn-outline" href="#catalogo" data-menu-close>
+            Ver vehículos
+          </a>
+        </nav>
+      </div>
+    </header>
     <main id="top">
       <section class="hero section" aria-labelledby="hero-title">
         <div class="container container-narrow">
@@ -182,12 +182,10 @@
         </div>
       </section>
 
-      <!-- CATÁLOGO -->
-      <!-- CATÁLOGO -->
+      <!-- CATALOGO SECTION -->
       <section id="catalogo" class="section" aria-labelledby="titulo-catalogo">
-        <div class="container container-wide stack-md">
-          <div class=" stack-md"> 
-          <header class="stack-xs">
+        <div class="container stack-md">
+          <header class="header-catalogo">
             <h2 class="section-title" id="titulo-catalogo">Nuestro Catálogo</h2>
             <p class="section-subtitle subtitulo">
               Explorá los vehículos disponibles. Tocá una tarjeta para consultar
@@ -205,7 +203,6 @@
                 class="filters filters-grid"
                 aria-label="Filtros del catálogo"
               >
-                <!-- PRECIO -->
                 <div class="filter">
                   <label for="filter-price">Precio</label>
                   <select id="filter-price" name="price">
@@ -217,7 +214,6 @@
                   </select>
                 </div>
 
-                <!-- MARCA -->
                 <div class="filter">
                   <label for="filter-brand">Marca</label>
                   <select id="filter-brand" name="brand">
@@ -229,7 +225,6 @@
                   </select>
                 </div>
 
-                <!-- AÑO -->
                 <div class="filter">
                   <label for="filter-year">Año</label>
                   <select id="filter-year" name="year-range">
@@ -241,7 +236,6 @@
                   </select>
                 </div>
 
-                <!-- KILOMETRAJE -->
                 <div class="filter">
                   <label for="filter-km">Kilometraje</label>
                   <select id="filter-km" name="km">
@@ -252,7 +246,6 @@
                   </select>
                 </div>
 
-                <!-- TRANSMISIÓN -->
                 <div class="filter">
                   <label for="filter-trans">Transmisión</label>
                   <select id="filter-trans" name="transmission">
@@ -262,7 +255,6 @@
                   </select>
                 </div>
 
-                <!-- BOTÓN -->
                 <div class="filter-actions">
                   <button type="reset" class="btn btn-blue btn-full">
                     Limpiar
@@ -271,406 +263,465 @@
               </form>
             </div>
           </details>
-</div>
-          
-            <div class="gallery-grid" role="list">
-              <!-- 1 -->
-              <article class="gallery-item" role="listitem">
-                <a href="pages/auto1.html" aria-label="Consultar Renault Kwid 2024">
-                  <figure class="car-card">
-                    <div class="car-media">
-                      <img
-                        src="assets/fiatmobi.webp"
-                        alt="Renault Kwid 2024 rojo"
-                        loading="lazy"
-                      />
-                    </div>
-                    <figcaption class="car-body">
-                      <div class="car-info">
+        </div>
+
+        <!-- GRID (container-wide separado) -->
+        <div class="container container-wide">
+          <div class="gallery-grid" role="list">
+            <!-- 1 -->
+            <article class="gallery-item" role="listitem">
+              <a
+                href="pages/auto1.html"
+                aria-label="Consultar Renault Kwid 2024"
+              >
+                <figure class="car-card">
+                  <div class="car-media">
+                    <img
+                      src="assets/fiatmobi.webp"
+                      alt="Renault Kwid 2024 rojo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="car-body">
+                    <div class="car-info">
                       <h3 class="car-title">Fiat Mobi</h3>
                       <p class="car-sub">Intense 1.0 MT</p>
                       <p class="car-meta">2024 | 33.000 km</p>
-                      </div>
-                      <p class="car-price">USD 12.490</p>
-                    </figcaption>
-                  </figure>
-                </a>
-              </article>
-
-              <!-- 2 -->
-              <article class="gallery-item" role="listitem">
-                <a href="pages/auto1.html" aria-label="Consultar BYD e2 2023">
-                  <figure class="car-card">
-                    <div class="car-media">
-                      <img
-                        src="assets/vwsuran.webp"
-                        alt="VW Suran gris plata"
-                        loading="lazy"
-                      />
                     </div>
-                    <figcaption class="car-body">
-                      <div class="car-info">
+                    <p class="car-price">USD 12.490</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+
+            <!-- 2 -->
+            <article class="gallery-item" role="listitem">
+              <a href="pages/auto1.html" aria-label="Consultar BYD e2 2023">
+                <figure class="car-card">
+                  <div class="car-media">
+                    <img
+                      src="assets/vwsuran.webp"
+                      alt="VW Suran gris plata"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="car-body">
+                    <div class="car-info">
                       <h3 class="car-title">VW Suran</h3>
                       <p class="car-sub">Gris Plata</p>
                       <p class="car-meta">2023 | 32.000 km</p>
-                      </div>
-                      <p class="car-price">USD 11.990</p>
-                    </figcaption>
-                  </figure>
-                </a>
-              </article>
-
-              <!-- 3 -->
-              <article class="gallery-item" role="listitem">
-                <a href="pages/auto1.html" aria-label="Consultar Jetour X70 2024">
-                  <figure class="car-card">
-                    <div class="car-media">
-                      <img
-                        src="/img/auto3.jpg"
-                        alt="Jetour X70 gris oscuro"
-                        loading="lazy"
-                      />
                     </div>
-                    <figcaption class="car-body">
-                      <div class="car-info">
+                    <p class="car-price">USD 11.990</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+
+            <!-- 3 -->
+            <article class="gallery-item" role="listitem">
+              <a href="pages/auto1.html" aria-label="Consultar Jetour X70 2024">
+                <figure class="car-card">
+                  <div class="car-media">
+                    <img
+                      src="/img/auto3.jpg"
+                      alt="Jetour X70 gris oscuro"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="car-body">
+                    <div class="car-info">
                       <h3 class="car-title">Jetour X70</h3>
                       <p class="car-sub">Luxury MT</p>
                       <p class="car-meta">2024 | 43.000 km</p>
-                      </div>
-                      <p class="car-price">USD 21.990</p>
-                    </figcaption>
-                  </figure>
-                </a>
-              </article>
-
-              <!-- 4 -->
-              <article class="gallery-item" role="listitem">
-                <a href="pages/auto1.html" aria-label="Consultar Peugeot 2008 2023">
-                  <figure class="car-card">
-                    <div class="car-media">
-                      <img
-                        src="/img/auto4.jpg"
-                        alt="Peugeot 2008 rojo"
-                        loading="lazy"
-                      />
                     </div>
-                    <figcaption class="car-body">
-                      <div class="car-info">  
+                    <p class="car-price">USD 21.990</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+
+            <!-- 4 -->
+            <article class="gallery-item" role="listitem">
+              <a
+                href="pages/auto1.html"
+                aria-label="Consultar Peugeot 2008 2023"
+              >
+                <figure class="car-card">
+                  <div class="car-media">
+                    <img
+                      src="/img/auto4.jpg"
+                      alt="Peugeot 2008 rojo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="car-body">
+                    <div class="car-info">
                       <h3 class="car-title">Peugeot 2008</h3>
                       <p class="car-sub">Allure 1.2 Europa</p>
                       <p class="car-meta">2023 | 61.000 km</p>
-                      </div>
-                      <p class="car-price">USD 23.990</p>
-                    </figcaption>
-                  </figure>
-                </a>
-              </article>
-
-              <!-- 5 -->
-              <article class="gallery-item" role="listitem">
-                <a href="pages/auto1.html" aria-label="Consultar Toyota Corolla 2018">
-                  <figure class="car-card">
-                    <div class="car-media">
-                      <img
-                        src="/img/auto5.jpg"
-                        alt="Toyota Corolla 2018 gris"
-                        loading="lazy"
-                      />
                     </div>
-                    <figcaption class="car-body">
-                      <div class="car-info">
+                    <p class="car-price">USD 23.990</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+
+            <!-- 5 -->
+            <article class="gallery-item" role="listitem">
+              <a
+                href="pages/auto1.html"
+                aria-label="Consultar Toyota Corolla 2018"
+              >
+                <figure class="car-card">
+                  <div class="car-media">
+                    <img
+                      src="/img/auto5.jpg"
+                      alt="Toyota Corolla 2018 gris"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="car-body">
+                    <div class="car-info">
                       <h3 class="car-title">Toyota Corolla</h3>
                       <p class="car-sub">XLE 1.8 CVT</p>
                       <p class="car-meta">2018 | 75.000 km</p>
-                      </div>
-                      <p class="car-price">USD 17.990</p>
-                    </figcaption>
-                  </figure>
-                </a>
-              </article>
-
-              <!-- 6 -->
-              <article class="gallery-item" role="listitem">
-                <a href="pages/auto1.html" aria-label="Consultar Honda Civic 2019">
-                  <figure class="car-card">
-                    <div class="car-media">
-                      <img
-                        src="/img/auto6.jpg"
-                        alt="Honda Civic 2019 azul"
-                        loading="lazy"
-                      />
                     </div>
-                    <figcaption class="car-body">
-                      <div class="car-info">
+                    <p class="car-price">USD 17.990</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+
+            <!-- 6 -->
+            <article class="gallery-item" role="listitem">
+              <a
+                href="pages/auto1.html"
+                aria-label="Consultar Honda Civic 2019"
+              >
+                <figure class="car-card">
+                  <div class="car-media">
+                    <img
+                      src="/img/auto6.jpg"
+                      alt="Honda Civic 2019 azul"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="car-body">
+                    <div class="car-info">
                       <h3 class="car-title">Honda Civic</h3>
                       <p class="car-sub">Sport 2.0</p>
                       <p class="car-meta">2019 | 60.000 km</p>
-                      </div>
-                      <p class="car-price">USD 19.490</p>
-                    </figcaption>
-                  </figure>
-                </a>
-              </article>
-
-              <!-- 7 -->
-              <article class="gallery-item" role="listitem">
-                <a href="pages/auto1.html" aria-label="Consultar Ford EcoSport 2021">
-                  <figure class="car-card">
-                    <div class="car-media">
-                      <img
-                        src="/img/auto7.jpg"
-                        alt="Ford EcoSport 2021 blanco"
-                        loading="lazy"
-                      />
                     </div>
-                    <figcaption class="car-body">
-                      <div class="car-info">
+                    <p class="car-price">USD 19.490</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+
+            <!-- 7 -->
+            <article class="gallery-item" role="listitem">
+              <a
+                href="pages/auto1.html"
+                aria-label="Consultar Ford EcoSport 2021"
+              >
+                <figure class="car-card">
+                  <div class="car-media">
+                    <img
+                      src="/img/auto7.jpg"
+                      alt="Ford EcoSport 2021 blanco"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="car-body">
+                    <div class="car-info">
                       <h3 class="car-title">Ford EcoSport</h3>
                       <p class="car-sub">SE 1.5</p>
                       <p class="car-meta">2021 | 48.000 km</p>
-                      </div>
-                      <p class="car-price">USD 18.750</p>
-                    </figcaption>
-                  </figure>
-                </a>
-              </article>
-
-              <!-- 8 -->
-              <article class="gallery-item" role="listitem">
-                <a href="pages/auto1.html" aria-label="Consultar Kia Sportage 2022">
-                  <figure class="car-card">
-                    <div class="car-media">
-                      <img
-                        src="/img/auto8.jpg"
-                        alt="Kia Sportage 2022 negro"
-                        loading="lazy"
-                      />
                     </div>
-                    <figcaption class="car-body">
-                      <div class="car-info">
+                    <p class="car-price">USD 18.750</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+
+            <!-- 8 -->
+            <article class="gallery-item" role="listitem">
+              <a
+                href="pages/auto1.html"
+                aria-label="Consultar Kia Sportage 2022"
+              >
+                <figure class="car-card">
+                  <div class="car-media">
+                    <img
+                      src="/img/auto8.jpg"
+                      alt="Kia Sportage 2022 negro"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="car-body">
+                    <div class="car-info">
                       <h3 class="car-title">Kia Sportage</h3>
                       <p class="car-sub">EX 2.0 AWD</p>
                       <p class="car-meta">2022 | 36.000 km</p>
-                      </div>
-                      <p class="car-price">USD 24.990</p>
-                    </figcaption>
-                  </figure>
-                </a>
-              </article>
-            </div>
+                    </div>
+                    <p class="car-price">USD 24.990</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
           </div>
         </div>
       </section>
 
       <!-- VENDER -->
-<section id="vender" class="section sell sell-bg" aria-labelledby="sell-title">
-  <div class="container sell-wrap">
-    <div class="sell-content stack-md">
-      <header >
-        <h2 class="section-title">Vendé tu auto con nosotros</h2>
-        <p class="section-subtitle sell-subtitle">
-          Enviá fotos y datos básicos. Te respondemos con una tasación estimada y
-          opciones para vender rápido.
-        </p>
-      </header>
+      <section
+        id="vender"
+        class="section sell sell-bg"
+        aria-labelledby="sell-title"
+      >
+        <div class="container sell-wrap">
+          <div class="sell-content stack-md">
+            <header>
+              <h2 class="section-title">Vendé tu auto con nosotros</h2>
+              <p class="section-subtitle sell-subtitle">
+                Enviá fotos y datos básicos. Te respondemos con una tasación
+                estimada y opciones para vender rápido.
+              </p>
+            </header>
 
-      
-      <ul class="sell-steps" role="list">
-        <li class="sell-step">
-          <span class="sell-step-icon" aria-hidden="true">
-            <!-- icon: checklist -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M9 11l2 2 4-5" />
-              <path d="M4 6h4" />
-              <path d="M4 12h4" />
-              <path d="M4 18h4" />
-              <path d="M14 6h6" />
-              <path d="M14 12h6" />
-              <path d="M14 18h6" />
-            </svg>
-          </span>
-          <div class="sell-step-body">
-            <h3 class="sell-step-title">1) Enviá datos</h3>
-            <p class="sell-step-text">Marca, modelo, año, versión y kilometraje.</p>
+            <ul class="sell-steps" role="list">
+              <li class="sell-step">
+                <span class="sell-step-icon" aria-hidden="true">
+                  <!-- icon: checklist -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M9 11l2 2 4-5" />
+                    <path d="M4 6h4" />
+                    <path d="M4 12h4" />
+                    <path d="M4 18h4" />
+                    <path d="M14 6h6" />
+                    <path d="M14 12h6" />
+                    <path d="M14 18h6" />
+                  </svg>
+                </span>
+                <div class="sell-step-body">
+                  <h3 class="sell-step-title">1) Enviá datos</h3>
+                  <p class="sell-step-text">
+                    Marca, modelo, año, versión y kilometraje.
+                  </p>
+                </div>
+              </li>
+
+              <li class="sell-step">
+                <span class="sell-step-icon" aria-hidden="true">
+                  <!-- icon: camera -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M4 7h4l2-2h4l2 2h4v12H4z" />
+                    <circle cx="12" cy="13" r="3.2" />
+                  </svg>
+                </span>
+                <div class="sell-step-body">
+                  <h3 class="sell-step-title">2) Mandá fotos</h3>
+                  <p class="sell-step-text">
+                    Frente, lateral, interior, tablero y cubiertas.
+                  </p>
+                </div>
+              </li>
+
+              <li class="sell-step">
+                <span class="sell-step-icon" aria-hidden="true">
+                  <!-- icon: bolt -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M13 2L3 14h8l-1 8 11-14h-8z" />
+                  </svg>
+                </span>
+                <div class="sell-step-body">
+                  <h3 class="sell-step-title">3) Recibí tasación</h3>
+                  <p class="sell-step-text">
+                    Te respondemos con una estimación y próximos pasos.
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="sell-cta stack-sm">
+              <a
+                class="btn btn-green"
+                href="https://wa.me/59898137941?text=Hola%20UnoMotors,%20estoy%20interesado%20en%20uno%20de%20los%20veh%C3%ADculos%20publicados%20en%20la%20web.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20y%20disponibilidad%3F%20Gracias."
+                target="_blank"
+                rel="noopener"
+              >
+                Tasación por WhatsApp
+              </a>
+
+              <p class="sell-note">
+                Tasación <strong>sin costo</strong> · Respuesta en el día
+              </p>
+            </div>
           </div>
-        </li>
 
-        <li class="sell-step">
-          <span class="sell-step-icon" aria-hidden="true">
-            <!-- icon: camera -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M4 7h4l2-2h4l2 2h4v12H4z" />
-              <circle cx="12" cy="13" r="3.2" />
-            </svg>
-          </span>
-          <div class="sell-step-body">
-            <h3 class="sell-step-title">2) Mandá fotos</h3>
-            <p class="sell-step-text">Frente, lateral, interior, tablero y cubiertas.</p>
+          <figure class="sell-media">
+            <img
+              src="assets/vender.jpeg"
+              alt="Persona entregando llaves en una venta de auto"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section id="simulador" class="loan-section">
+        <div class="container">
+          <header class="loan-header">
+            <h2 class="section-title loan-title">
+              Simulador de préstamo automotor
+            </h2>
+            <p class="section-subtitle loan-subtitle subtitulo">
+              Compará cuotas y plazos directamente con cada banco.
+            </p>
+          </header>
+          <div class="loan-grid">
+            <!-- Scotiabank -->
+            <article class="loan-card">
+              <div class="loan-logo">
+                <img src="assets/scotia.png" alt="Scotiabank" />
+              </div>
+              <a
+                href="https://www.scotiabank.com.uy/Personas/Prestamos/SolicitaloYa/calculadora-de-prestamos"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary"
+              >
+                Simular
+              </a>
+            </article>
+
+            <!-- Itaú -->
+            <article class="loan-card">
+              <div class="loan-logo">
+                <img src="assets/itau.svg" alt="Itaú" />
+              </div>
+              <a
+                href="https://www.itau.com.uy/inst/prestamosMiautoCalculador.html"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary"
+              >
+                Simular
+              </a>
+            </article>
+
+            <!-- Santander -->
+            <article class="loan-card">
+              <div class="loan-logo">
+                <img src="assets/miauto.png" alt="Mi Auto Santander" />
+              </div>
+              <a
+                href="https://www.miauto.com.uy/"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary"
+              >
+                Simular
+              </a>
+            </article>
           </div>
-        </li>
+        </div>
+      </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+      <div class="container container-wide footer-grid">
+        <!-- Marca -->
+        <div class="footer-col footer-brand">
+          <!-- LOGO -->
+          <a
+            href="#top"
+            class="footer-logo"
+            aria-label="UnoMotors - Ir al inicio"
+          >
+            <img src="assets/logo.png" alt="UnoMotors Automóviles" />
+          </a>
 
-        <li class="sell-step">
-          <span class="sell-step-icon" aria-hidden="true">
-            <!-- icon: bolt -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M13 2L3 14h8l-1 8 11-14h-8z" />
-            </svg>
-          </span>
-          <div class="sell-step-body">
-            <h3 class="sell-step-title">3) Recibí tasación</h3>
-            <p class="sell-step-text">Te respondemos con una estimación y próximos pasos.</p>
-          </div>
-        </li>
-      </ul>
+          <p class="footer-text">
+            Compra y venta de usados con atención personalizada. Te ayudamos a
+            encontrar tu próximo auto y a vender el tuyo con una tasación
+            rápida.
+          </p>
+        </div>
 
-      <div class="sell-cta stack-sm">
-        <a
-          class="btn btn-green"
-          href="https://wa.me/59898137941?text=Hola%20UnoMotors,%20estoy%20interesado%20en%20uno%20de%20los%20veh%C3%ADculos%20publicados%20en%20la%20web.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20y%20disponibilidad%3F%20Gracias."
-          target="_blank"
-          rel="noopener"
-        >
-          Tasación por WhatsApp
-        </a>
+        <!-- Navegación -->
+        <div class="footer-col">
+          <p class="footer-kicker">Explorar</p>
+          <ul class="footer-links">
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#vender">Vendé tu auto</a></li>
+            <li><a href="#simulador">Simulador de préstamo</a></li>
+            <li><a href="#top">Volver arriba</a></li>
+          </ul>
+        </div>
 
-        <p class="sell-note">
-          Tasación <strong>sin costo</strong> · Respuesta en el día
+        <!-- Contacto -->
+        <div class="footer-col">
+          <p class="footer-kicker">Contacto</p>
+          <ul class="footer-links">
+            <li>
+              <a
+                href="https://wa.me/59898137941?text=Hola%20UnoMotors,%20estoy%20interesado%20en%20uno%20de%20los%20veh%C3%ADculos%20publicados%20en%20la%20web.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20y%20disponibilidad%3F%20Gracias."
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp: +598 98 137 941
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:contacto@unomotors.com">contacto@unomotors.com</a>
+            </li>
+            <li>
+              <span
+                class="footer-text"
+                style="display: block; margin-top: 0.25rem"
+              >
+                Montevideo, Uruguay
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider grande -->
+      <div class="footer-separator"></div>
+
+      <div class="container container-wide footer-bottom">
+        <p class="footer-copy">
+          © <span id="year"></span> UnoMotors Automóviles
         </p>
       </div>
-    </div>
+    </footer>
 
-    <figure class="sell-media">
-      <img
-        src="assets/vender.jpeg"
-        alt="Persona entregando llaves en una venta de auto"
-        loading="lazy"
-      />
-    </figure>
-  </div>
-</section>
+    <script>
+      // Año automático
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
-<section id="simulador" class="loan-section">
-  <div class="container">
-   <header class="loan-header">
-    <h2 class="section-title loan-title">Simulador de préstamo automotor</h2>
-    <p class="section-subtitle loan-subtitle subtitulo">Compará cuotas y plazos directamente con cada banco.</p>
-    </header>
-    <div class="loan-grid">
-
-      <!-- Scotiabank -->
-      <article class="loan-card">
-        <div class="loan-logo">
-        <img src="assets/scotia.png" alt="Scotiabank"></div>
-        <a 
-          href="https://www.scotiabank.com.uy/Personas/Prestamos/SolicitaloYa/calculadora-de-prestamos" 
-          target="_blank" 
-          rel="noopener"
-          class="btn btn-primary"
-        >
-          Simular
-        </a>
-      </article>
-
-      <!-- Itaú -->
-      <article class="loan-card">
-        <div class="loan-logo">
-        <img src="assets/itau.svg" alt="Itaú"></div>
-        <a 
-          href="https://www.itau.com.uy/inst/prestamosMiautoCalculador.html" 
-          target="_blank" 
-          rel="noopener"
-          class="btn btn-primary"
-        >
-          Simular
-        </a>
-      </article>
-
-      <!-- Santander -->
-      <article class="loan-card">
-        <div class="loan-logo">
-        <img src="assets/miauto.png" alt="Mi Auto Santander"></div>
-        <a 
-          href="https://www.miauto.com.uy/" 
-          target="_blank" 
-          rel="noopener"
-          class="btn btn-primary"
-        >
-          Simular
-        </a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-     </main>
-     <!-- FOOTER -->
-<footer class="footer" id="footer">
-  <div class="container container-wide footer-grid">
-    <!-- Marca -->
-    <div class="footer-col footer-brand">
-      <!-- LOGO -->
-      <a href="#top" class="footer-logo" aria-label="UnoMotors - Ir al inicio">
-        <img src="assets/logo.png" alt="UnoMotors Automóviles" />
-      </a>
-
-      <p class="footer-text">
-        Compra y venta de usados con atención personalizada. Te ayudamos a
-        encontrar tu próximo auto y a vender el tuyo con una tasación rápida.
-      </p>
-    </div>
-
-    <!-- Navegación -->
-    <div class="footer-col">
-      <p class="footer-kicker">Explorar</p>
-      <ul class="footer-links">
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#vender">Vendé tu auto</a></li>
-        <li><a href="#simulador">Simulador de préstamo</a></li>
-        <li><a href="#top">Volver arriba</a></li>
-      </ul>
-    </div>
-
-    <!-- Contacto -->
-    <div class="footer-col">
-      <p class="footer-kicker">Contacto</p>
-      <ul class="footer-links">
-        <li>
-          <a href="https://wa.me/59898137941?text=Hola%20UnoMotors,%20estoy%20interesado%20en%20uno%20de%20los%20veh%C3%ADculos%20publicados%20en%20la%20web.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20y%20disponibilidad%3F%20Gracias."
-             target="_blank" rel="noopener">
-            WhatsApp: +598 98 137 941
-          </a>
-        </li>
-       
-        <li>
-          <a href="mailto:contacto@unomotors.com">contacto@unomotors.com</a>
-        </li>
-        <li>
-          <span class="footer-text" style="display:block; margin-top:.25rem;">
-            Montevideo, Uruguay
-          </span>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Divider grande -->
-  <div class="footer-separator"></div>
-
-  <div class="container container-wide footer-bottom">
-    <p class="footer-copy">
-      © <span id="year"></span> UnoMotors Automóviles
-    </p>
-  </div>
-</footer>
-
-<script>
-  // Año automático
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-     <a
-    href="https://wa.me/59898137941?text=Hola%20UnoMotors,%20estoy%20interesado%20en%20uno%20de%20los%20veh%C3%ADculos%20publicados%20en%20la%20web.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20y%20disponibilidad%3F%20Gracias."  class="whatsapp-sticky"
+    <a
+      href="https://wa.me/59898137941?text=Hola%20UnoMotors,%20estoy%20interesado%20en%20uno%20de%20los%20veh%C3%ADculos%20publicados%20en%20la%20web.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20y%20disponibilidad%3F%20Gracias."
+      class="whatsapp-sticky"
       target="_blank"
       rel="noopener"
       aria-label="Contactar por WhatsApp"
