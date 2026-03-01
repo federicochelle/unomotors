@@ -100,7 +100,7 @@
   /* fondo con tu imagen */
   .sell-bg {
     position: relative;
-    background-image: url("assets/vender.jpeg");
+    background-image: url("../assets/vender.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
