@@ -10,9 +10,15 @@
   <body>
     <!-- Header -->
     <header class="site-header">
-      <div class="container flex flex-between flex-wrap header-inner">
+      <div
+        class="container container-wide flex flex-between flex-wrap header-inner"
+      >
         <!-- Brand -->
-        <a class="brand brand-logo-only" href="#top" aria-label="Ir al inicio">
+        <a
+          class="brand brand-logo-only"
+          href="../index.html"
+          aria-label="Ir al inicio"
+        >
           <img
             class="brand-logo"
             src="../assets/logo.png"
@@ -25,21 +31,14 @@
 
         <!-- Nav desktop -->
         <nav class="nav nav-desktop" aria-label="Navegación principal">
-          <a class="nav-link" href="../index.html#catalogo" data-menu-close
-            >Catálogo</a
-          >
-          <a class="nav-link" href="../index.html#vender" data-menu-close
-            >Vendé tu auto</a
-          >
-          <a class="nav-link" href="../index.html#simulador" data-menu-close
-            >Simulador</a
-          >
+          <a class="nav-link" href="../index.html">Catálogo</a>
+          <a class="nav-link" href="financiacion.html">Financiacion</a>
+          <a class="nav-link" href="tasacion.html">Tasá tu vehiculo</a>
+          <a class="nav-link" href="consignacion.html">Consignaciones</a>
+          <a class="nav-link" href="nosotros.html">Nosotros</a>
           <a class="nav-link" href="#footer">Contacto</a>
 
           <!-- CTA opcional -->
-          <a class="btn btn-outline" href="../index.html#catalogo"
-            >Ver vehículos</a
-          >
         </nav>
 
         <!-- Botón hamburguesa (mobile) -->
@@ -61,132 +60,74 @@
       <!-- Menú mobile -->
       <div class="mobile-menu" id="mobile-menu" hidden>
         <nav class="nav nav-mobile" aria-label="Menú móvil">
-          <a class="nav-link" href="../index.html#catalogo" data-menu-close
-            >Catálogo</a
-          >
-          <a class="nav-link" href="../index.html#vender" data-menu-close
-            >Vendé tu auto</a
-          >
-          <a class="nav-link" href="../index.html#simulador" data-menu-close
-            >Simulador</a
-          >
-          <a class="nav-link" href="#footer" data-menu-close>Contacto</a>
-
-          <a
-            class="btn btn-outline"
-            href="../index.html#catalogo"
-            data-menu-close
-          >
-            Ver vehículos
-          </a>
+          <a class="nav-link" href="../index.html">Catálogo</a>
+          <a class="nav-link" href="financiacion.html">Financiacion</a>
+          <a class="nav-link" href="tasacion.html">Tasá tu vehiculo</a>
+          <a class="nav-link" href="consignacion.html">Consignaciones</a>
+          <a class="nav-link" href="nosotros.html">Nosotros</a>
+          <a class="nav-link" href="#footer">Contacto</a>
         </nav>
       </div>
     </header>
-
-    <main id="top" class="section">
+    <main id="top" class="section" data-auto-page>
       <div class="container">
+        <!-- Header -->
         <header class="auto-head stack-xs">
-          <h1 class="auto-title">Fiat Mobi <span>2024</span></h1>
-          <p class="auto-price">USD 12.490</p>
-          <p class="auto-subtitle">Intense 1.0 MT · 33.000 km</p>
+          <h1 class="auto-title" id="autoTitle">
+            Cargando… <span id="autoYear"></span>
+          </h1>
+
+          <p class="auto-price" id="autoPrice">—</p>
+          <p class="auto-subtitle" id="autoSubtitle">—</p>
         </header>
+
         <section class="auto-layout">
           <!-- Galería -->
-          <div class="auto-gallery">
+          <div class="auto-gallery" id="autoGallery">
             <img
               class="auto-hero is-clickeable"
               id="autoHero"
-              src="../assets/fiatmobi.webp"
-              alt="Renault Kwid 2024 frente"
+              src=""
+              alt=""
               loading="eager"
             />
 
             <div class="auto-thumbs" id="autoThumbs">
-              <button
-                class="thumb"
-                type="button"
-                data-full="../assets/hero.jpg"
-                aria-label="Ver foto 1"
-              >
-                <img src="../assets/fiatmobi.webp" alt="Frente" />
-              </button>
-
-              <button
-                class="thumb"
-                type="button"
-                data-full="../assets/fiatmobi.webp"
-                aria-label="Ver foto 2"
-              >
-                <img src="../assets/fiatmobi.webp" alt="Lateral" />
-              </button>
-
-              <button
-                class="thumb"
-                type="button"
-                data-full="../assets/fiatmobi.webp"
-                aria-label="Ver foto 3"
-              >
-                <img src="../assets/fiatmobi.webp" alt="Interior" />
-              </button>
+              <!-- JS inserta los 3 thumbs acá -->
             </div>
+
+            <!-- opcional: si querés -->
+            <!-- <button class="open-lightbox" type="button" id="openLightbox">Ver fotos</button> -->
           </div>
 
           <!-- Especificaciones -->
           <aside class="auto-specs">
             <h2 class="section-title">Especificaciones</h2>
 
-            <dl class="spec-list">
-              <div class="spec-item">
-                <dt>Marca</dt>
-                <dd>Fiat</dd>
-              </div>
-              <div class="spec-item">
-                <dt>Modelo</dt>
-                <dd>Mobi</dd>
-              </div>
-              <div class="spec-item">
-                <dt>Año</dt>
-                <dd>2024</dd>
-              </div>
-              <div class="spec-item">
-                <dt>Kilometraje</dt>
-                <dd>33.000 km</dd>
-              </div>
-              <div class="spec-item">
-                <dt>Motor</dt>
-                <dd>1.0</dd>
-              </div>
-              <div class="spec-item">
-                <dt>Transmisión</dt>
-                <dd>Manual</dd>
-              </div>
-              <div class="spec-item">
-                <dt>Combustible</dt>
-                <dd>Nafta</dd>
-              </div>
-              <div class="spec-item">
-                <dt>Color</dt>
-                <dd>Rojo</dd>
-              </div>
+            <dl class="spec-list" id="specList">
+              <!-- JS inserta <div class="spec-item">… -->
             </dl>
 
             <a
               class="btn btn-green btn-full"
               target="_blank"
               rel="noopener"
-              href="https://wa.me/59898137941?text=Hola%20UnoMotors,%20estoy%20interesado%20en%20uno%20de%20los%20veh%C3%ADculos%20publicados%20en%20la%20web.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20y%20disponibilidad%3F%20Gracias."
+              id="autoWhatsapp"
+              href="#"
             >
               Consultar por WhatsApp
             </a>
 
-            <p class="auto-note">Respuesta en el día · Coordinamos visita</p>
+            <p class="auto-note" id="autoNote">
+              Respuesta en el día · Coordinamos visita
+            </p>
           </aside>
         </section>
-        <section class="container back-link">
-          <a class="btn btn-blue back-link" href="../index.html"
-            >← Volver al catálogo</a
-          >
-        </section>
+
+        <!-- Volver -->
+        <div class="back-link" style="margin-top: 1.5rem">
+          <a class="btn btn-blue" href="../index.html">← Volver al catálogo</a>
+        </div>
 
         <!-- LIGHTBOX / MODAL -->
         <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -215,6 +156,7 @@
             >
               ‹
             </button>
+
             <button
               class="lb-nav lb-next"
               type="button"
@@ -226,7 +168,7 @@
 
             <img class="lb-image" id="lbImage" alt="" />
 
-            <div class="lb-counter" id="lbCounter">1 / 3</div>
+            <div class="lb-counter" id="lbCounter">0 / 0</div>
           </div>
         </div>
       </div>
@@ -256,9 +198,18 @@
         <div class="footer-col">
           <p class="footer-kicker">Explorar</p>
           <ul class="footer-links">
-            <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#vender">Vendé tu auto</a></li>
-            <li><a href="#simulador">Simulador de préstamo</a></li>
+            <li><a class="nav-link" href="../index.html">Catálogo</a></li>
+            <li>
+              <a class="nav-link" href="financiacion.html">Financiacion</a>
+            </li>
+            <li>
+              <a class="nav-link" href="tasacion.html">Tasá tu vehiculo</a>
+            </li>
+            <li>
+              <a class="nav-link" href="consignaciones.html">Consignaciones</a>
+            </li>
+            <li><a class="nav-link" href="quienes-somos.html">Nosotros</a></li>
+            <li><a class="nav-link" href="#footer">Contacto</a></li>
             <li><a href="#top">Volver arriba</a></li>
           </ul>
         </div>
@@ -301,6 +252,37 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      // Año automático
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <a
+      href="https://wa.me/59898137941?text=Hola%20UnoMotors,%20estoy%20interesado%20en%20uno%20de%20los%20veh%C3%ADculos%20publicados%20en%20la%20web.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20y%20disponibilidad%3F%20Gracias."
+      class="whatsapp-sticky"
+      target="_blank"
+      rel="noopener"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg
+        class="btn-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+        <path
+          d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+        />
+      </svg>
+    </a>
     <script src="../js/app.js"></script>
 
     <script src="../js/lightbox.js"></script>

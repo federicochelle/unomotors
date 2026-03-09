@@ -77,8 +77,9 @@
   color: var(--color-text-muted);
 }
 
-.sell-cta {
+.sell-cta .btn {
   text-align: center;
+  margin: 1rem;
 }
 /* ===================================
    MOBILE: imagen como fondo + blur
