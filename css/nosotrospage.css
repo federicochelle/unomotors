@@ -1,0 +1,290 @@
+/* =====================================================
+   QUIENES SOMOS
+===================================================== */
+
+/* =========================
+   HERO
+========================= */
+
+.about-hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.about-hero-media,
+.about-hero-overlay {
+  inset: 0;
+}
+
+.about-hero-media {
+  background: url("../assets/petrosur1.webp") center center / cover no-repeat;
+  z-index: 1;
+}
+
+.about-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(7, 12, 18, 0.84) 0%,
+    rgba(7, 12, 18, 0.5) 44%,
+    rgba(7, 12, 18, 0.16) 100%
+  );
+  z-index: 2;
+}
+
+.about-hero-grid {
+  min-height: calc(78vh - 2rem);
+  display: grid;
+  align-items: center;
+}
+
+.about-hero-content {
+  max-width: 960px;
+  z-index: 3;
+}
+
+.about-section-kicker {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--brand-blue);
+}
+
+.about-page-title {
+  color: #fff;
+}
+
+.about-hero-lead {
+  color: rgba(255, 255, 255, 0.97);
+  font-weight: 700;
+}
+
+.about-hero-text {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.about-hero-actions {
+  gap: 0.9rem;
+  margin-top: var(--space-sm);
+}
+
+.about-hero-actions .btn {
+  min-height: 52px;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.about-story {
+  background: linear-gradient(180deg, #f7f9fb 0%, #f1f4f8 100%);
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.about-story-copy {
+  max-width: 760px;
+}
+
+.about-story-media,
+.about-service-media,
+.about-values-media {
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid rgba(18, 20, 24, 0.08);
+  box-shadow: var(--shadow-md);
+}
+
+.about-story-media img,
+.about-service-media img,
+.about-values-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   SERVICE
+========================= */
+
+.about-service {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.about-service-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.about-service-copy {
+  max-width: 760px;
+}
+
+.about-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-check-list li {
+  position: relative;
+  padding-left: 2rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.about-check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.38rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  background: rgba(46, 160, 67, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(46, 160, 67, 0.2);
+}
+
+.about-check-list li::after {
+  content: "";
+  position: absolute;
+  left: 0.28rem;
+  top: 0.62rem;
+  width: 0.4rem;
+  height: 0.2rem;
+  border-left: 2px solid var(--brand-green);
+  border-bottom: 2px solid var(--brand-green);
+  transform: rotate(-45deg);
+}
+
+.about-check-list li + li {
+  margin-top: 0.85rem;
+}
+
+/* =========================
+   VALUES
+========================= */
+
+.about-values {
+  background: linear-gradient(180deg, #f7f9fb 0%, #eef3f8 100%);
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.about-values-copy {
+  max-width: 760px;
+}
+
+.about-values-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-value-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.1rem 1.1rem;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(18, 20, 24, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-value-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(31, 111, 235, 0.08);
+  color: var(--brand-blue);
+}
+
+.about-value-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.about-value-item h3 {
+  margin-bottom: 0.35rem;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.about-final {
+  background: linear-gradient(180deg, #edf2f7 0%, #e8eef5 100%);
+}
+
+.about-final-card {
+  padding: clamp(1.8rem, 4vw, 3rem);
+  border-radius: 3px;
+  background: #fff;
+  border: 1px solid rgba(18, 20, 24, 0.08);
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .about-story-grid,
+  .about-service-grid,
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-hero {
+    min-height: auto;
+  }
+
+  .about-hero-grid {
+    min-height: calc(80vh - 2rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .about-hero-grid {
+    min-height: calc(76vh - 2rem);
+  }
+
+  .about-hero-actions {
+    flex-direction: column;
+  }
+
+  .about-hero-actions .btn {
+    width: 100%;
+  }
+
+  .about-story-media img,
+  .about-service-media img,
+  .about-values-media img {
+    min-height: 280px;
+  }
+
+  .about-value-item {
+    grid-template-columns: 1fr;
+  }
+}

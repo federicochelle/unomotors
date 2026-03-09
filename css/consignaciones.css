@@ -1,0 +1,543 @@
+/* =====================================================
+   CONSIGNACIONES — OPCIÓN 2
+   Basado en tus overrides
+===================================================== */
+
+/* =========================
+   HERO
+========================= */
+
+.consign-hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.consign-hero-media,
+.consign-hero-overlay {
+  inset: 0;
+}
+
+.consign-hero-media {
+  background: url("../assets/petrosur1.webp") center center / cover no-repeat;
+  z-index: 1;
+}
+
+.consign-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(7, 12, 18, 0.84) 0%,
+    rgba(7, 12, 18, 0.52) 42%,
+    rgba(7, 12, 18, 0.18) 100%
+  );
+  z-index: 2;
+}
+
+.consign-hero-grid {
+  display: grid;
+  align-items: center;
+}
+
+.consign-hero-content {
+  max-width: 980px;
+  z-index: 3;
+}
+
+.consign-kicker,
+.consign-section-kicker {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.consign-kicker {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.consign-title {
+  color: #fff;
+}
+
+.consign-hero-lead {
+  color: rgba(255, 255, 255, 0.97);
+  font-weight: 700;
+}
+
+.consign-hero-text {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.consign-hero-actions {
+  gap: 0.9rem;
+  margin-top: var(--space-sm);
+}
+
+/* =========================
+   CONSIGNACIONES — SERVICIO INCLUYE
+========================= */
+
+.consign-includes {
+  background: linear-gradient(135deg, #163968 0%, #0e2d54 40%, #08213f 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.consign-includes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(31, 111, 235, 0.22) 0%,
+    transparent 42%
+  );
+  pointer-events: none;
+}
+
+.consign-includes .container {
+  position: relative;
+  z-index: 2;
+}
+
+.consign-section-kicker-light {
+  color: rgba(255, 255, 255, 0.82);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.consign-light-title {
+  color: #fff;
+}
+
+/* GRID ESPECÍFICO: 6 cards en una fila */
+.consign-include-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.consign-include-card {
+  min-height: 170px;
+  border-radius: 3px;
+  padding: 1.35rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.9rem;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.consign-include-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: var(--shadow-md);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.09),
+    rgba(255, 255, 255, 0.04)
+  );
+}
+
+.consign-include-icon {
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.consign-include-card p {
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+  font-size: clamp(0.95rem, 1vw, 1.05rem) !important;
+  line-height: 1.4 !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* laptops medianas */
+@media (max-width: 1400px) {
+  .consign-include-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* tablets */
+@media (max-width: 900px) {
+  .consign-include-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .consign-include-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consign-include-card {
+    min-height: auto;
+  }
+}
+/* =========================
+   BENEFITS
+========================= */
+
+/* =========================
+   CONSIGN SERVICE + BENEFITS
+========================= */
+
+.consign-service-benefits {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #163968 0%, #0e2d54 42%, #08213f 100%);
+}
+
+.consign-service-benefits::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(31, 111, 235, 0.22) 0%,
+    transparent 40%
+  );
+  pointer-events: none;
+}
+
+.consign-service-benefits .container {
+  position: relative;
+  z-index: 2;
+}
+
+.consign-service-head {
+  margin-inline: auto;
+}
+
+.consign-section-kicker-light {
+  color: rgba(255, 255, 255, 0.82);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.consign-light-title {
+  color: #fff;
+}
+
+.consign-service-intro {
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 62ch;
+  margin-inline: auto;
+}
+
+/* grid cards */
+.consign-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.consign-service-card {
+  min-height: 220px;
+  padding: 1.4rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.035)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.consign-service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: var(--shadow-md);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.045)
+  );
+}
+
+.consign-service-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.consign-service-icon svg {
+  width: 44px;
+  height: 44px;
+}
+
+.consign-service-card h3 {
+  color: #fff;
+  margin: 0;
+}
+
+.consign-service-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* benefits box */
+.consign-benefits-box {
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(18, 20, 24, 0.08);
+  box-shadow: var(--shadow-md);
+}
+
+.consign-benefits-box h3 {
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.consign-benefits-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.consign-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.consign-benefit-check {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(46, 160, 67, 0.12);
+  color: var(--brand-green);
+  margin-top: 0.1rem;
+}
+
+.consign-benefit-check svg {
+  width: 25px;
+  height: 25px;
+}
+
+.consign-benefit-item p {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .consign-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .consign-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consign-benefits-list {
+    grid-template-columns: 1fr;
+  }
+
+  .consign-service-card {
+    min-height: auto;
+  }
+}
+/* =========================
+   FINAL CTA
+========================= */
+
+.consign-final {
+  background: linear-gradient(180deg, #f6f8fb 0%, #edf2f7 100%);
+}
+
+.consign-final-card {
+  background: #fff;
+  border: 1px solid rgba(18, 20, 24, 0.08);
+  box-shadow: var(--shadow-md);
+  border-radius: 3px;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.consign-final-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.consign-final-btn {
+  min-width: 290px;
+  min-height: 54px;
+}
+
+.consign-final-copy p {
+  margin: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .consign-definition-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consign-final-row {
+    grid-template-columns: 1fr;
+  }
+
+  .consign-final-action {
+    width: 100%;
+  }
+
+  .consign-final-btn {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .consign-hero {
+    min-height: auto;
+  }
+
+  .consign-hero-grid {
+    min-height: calc(82vh - 2rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .consign-hero-grid {
+    min-height: calc(78vh - 2rem);
+  }
+
+  .consign-hero-actions {
+    flex-direction: column;
+  }
+
+  .consign-hero-actions .btn {
+    width: 100%;
+  }
+
+  .consign-title {
+    max-width: 14ch;
+  }
+
+  .consign-mini-card,
+  .consign-include-card,
+  .consign-final-card {
+    border-radius: 3px;
+  }
+}
+
+/* =========================
+   CONSIGN DEFINITION
+========================= */
+
+.consign-definition {
+  background: linear-gradient(180deg, #f7f9fb 0%, #f2f5f8 100%);
+}
+
+.consign-definition-copy {
+  margin-inline: auto;
+}
+
+.consign-section-kicker {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--brand-blue);
+}
+
+.consign-definition-copy h2 {
+  margin-inline: auto;
+}
+
+.consign-definition-copy p {
+  margin-inline: auto;
+}
+
+/* cards */
+
+.consign-mini-cards {
+  margin-top: var(--space-md);
+}
+
+.consign-mini-card {
+  padding: 1.8rem;
+}
+
+.consign-mini-icon {
+  width: 70px;
+  height: 70px;
+  margin-inline: auto;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 1.6rem;
+
+  border-radius: 999px;
+
+  background: rgba(31, 111, 235, 0.08);
+  border: 1px solid rgba(31, 111, 235, 0.15);
+}
+
+/* hover */
+
+.consign-mini-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.consign-mini-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}

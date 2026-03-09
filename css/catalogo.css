@@ -314,3 +314,121 @@
   display: flex;
   flex-direction: column;
 }
+
+/* =========================
+   GRID
+========================= */
+
+.gallery-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* =========================
+   CARD
+========================= */
+
+.car-card {
+  background: #fff;
+  border: 1px solid #e4e6ea;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.car-card:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.car-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.car-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.car-card:hover .car-media img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   BODY
+========================= */
+
+.car-body {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.car-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.car-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  min-height: 2.6em;
+}
+
+.car-sub {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.car-meta {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.car-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #7b1e1e;
+  margin-left: auto;
+}
