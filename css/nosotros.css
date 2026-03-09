@@ -3,7 +3,7 @@
 ========================= */
 
 .about-home {
-  background: #f7f9fb;
+  background: var(--color-bg);
 }
 
 .about-home-grid {
