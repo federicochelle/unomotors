@@ -11,7 +11,7 @@
     "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
   /* Base */
-  --color-bg: #f4f6f8; /* fondo gris muy claro */
+  --color-bg: #f0f1f2; /* fondo gris muy claro */
   --color-surface: #ffffff; /* cards */
   --color-text: #121418;
   --color-text-muted: rgba(18, 20, 24, 0.62);
