@@ -20,7 +20,7 @@
       rgba(10, 16, 24, 0.42) 0%,
       rgba(10, 16, 24, 0.5) 100%
     ),
-    url("../../assets/vender.jpeg") center center / cover no-repeat;
+    url("../assets/vender.jpeg") center center / cover no-repeat;
 }
 
 .tasacion-hero::after {
