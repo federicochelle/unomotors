@@ -7,7 +7,7 @@
 ========================= */
 
 .about-hero {
-  min-height: 88vh;
+  height: 78vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -27,7 +27,7 @@
 .about-hero-overlay {
   background: linear-gradient(
     90deg,
-    rgba(7, 12, 18, 0.84) 0%,
+    rgba(7, 12, 18, 0.64) 0%,
     rgba(7, 12, 18, 0.5) 44%,
     rgba(7, 12, 18, 0.16) 100%
   );
@@ -68,10 +68,6 @@
 .about-hero-actions {
   gap: 0.9rem;
   margin-top: var(--space-sm);
-}
-
-.about-hero-actions .btn {
-  min-height: 52px;
 }
 
 /* =========================

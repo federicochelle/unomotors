@@ -31,7 +31,37 @@
   color: var(--text-muted);
   font-weight: 500;
 }
+/* =========================
+   FINANCIACIÓN
+========================= */
 
+.auto-finance {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.finance-label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.finance-logos {
+  display: flex;
+  gap: 8px;
+}
+
+.finance-logos img {
+  height: 32px;
+  width: auto;
+
+  background: white;
+  padding: 4px 6px;
+  border-radius: 6px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
 .auto-layout {
   display: grid;
   gap: 1.5rem;
@@ -286,4 +316,76 @@
     font-size: 1rem;
     padding: 0.5rem 0.85rem;
   }
+}
+
+/* imagen principal */
+
+.auto-hero {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* clave */
+}
+
+/* contenedor de la galería */
+
+.auto-gallery {
+  width: 100%;
+}
+
+/* thumbs */
+
+.auto-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.auto-thumbs img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.auto-gallery {
+  max-width: 520px; /* ajustá este valor */
+}
+
+.auto-hero {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.auto-description {
+  margin-top: 60px;
+}
+
+.auto-description-content {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #444;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  padding: 1.25rem;
+}
+
+.auto-description-content p {
+  margin-bottom: 16px;
+}
+
+.auto-features {
+  margin: 20px 0;
+  padding-left: 18px;
+}
+
+.auto-features li {
+  margin-bottom: 6px;
+}
+
+.section-title {
+  margin-bottom: 1rem;
 }
