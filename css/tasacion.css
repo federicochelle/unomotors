@@ -8,7 +8,7 @@
 
 .tasacion-hero {
   position: relative;
-  min-height: 88vh;
+  min-height: 78vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -29,7 +29,7 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(7, 12, 18, 0.72) 0%,
+    rgba(7, 12, 18, 0.62) 0%,
     rgba(7, 12, 18, 0.38) 48%,
     rgba(7, 12, 18, 0.3) 100%
   );
