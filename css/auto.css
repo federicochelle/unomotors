@@ -21,9 +21,10 @@
 
 .auto-price {
   margin: 0.5rem 0 0;
-  font-size: clamp(1.25rem, 1.2vw + 1rem, 1.9rem);
+  font-size: clamp(2.25rem, 1.2vw + 1rem, 2.9rem);
   font-weight: 800;
-  color: var();
+  color: green;
+  margin-bottom: 2rem;
 }
 
 .auto-subtitle {
@@ -388,4 +389,46 @@
 
 .section-title {
   margin-bottom: 1rem;
+}
+
+.thumb-more {
+  position: relative;
+}
+
+.thumb-more span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.thumb-hidden {
+  display: none;
+}
+
+.auto-thumbs img:nth-child(n + 5) {
+  display: none;
+}
+
+.thumb-more {
+  position: relative;
+}
+
+.thumb-more span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 6px;
 }
