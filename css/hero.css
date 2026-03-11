@@ -12,7 +12,7 @@
   align-items: flex-start;
 
   color: #fff;
-  background: url("../assets/herooo.jpeg") bottom / cover no-repeat;
+  background: url("../assets/hero.webp") bottom / cover no-repeat;
   overflow: hidden;
   box-shadow: var(--shadow-md);
 }
