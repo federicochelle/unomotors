@@ -31,20 +31,18 @@
   padding-block: var(--space-xl);
 }
 
-@media (max-width: 700px) {
-  .section {
-    padding-inline: 0;
-  }
-
-  .section .container {
-    padding-inline: clamp(1rem, 5vw, 2rem);
-  }
-}
-
 .section .container {
   padding-inline: 2rem; /* margen visual cómodo */
 }
 
+@media (max-width: 700px) {
+  .section {
+    padding-inline: 0;
+  }
+  .section .container {
+    padding-inline: 0; /* margen visual cómodo */
+  }
+}
 /* =========================
    GRID
 ========================= */
