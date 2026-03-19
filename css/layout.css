@@ -39,6 +39,7 @@
   .section {
     padding-inline: 0;
     padding: 1rem;
+    padding-top: 2rem;
   }
   .section .container {
     padding-inline: 0; /* margen visual cómodo */
