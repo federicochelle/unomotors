@@ -38,6 +38,7 @@
 @media (max-width: 700px) {
   .section {
     padding-inline: 0;
+    padding: 1rem;
   }
   .section .container {
     padding-inline: 0; /* margen visual cómodo */
