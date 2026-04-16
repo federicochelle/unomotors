@@ -25,9 +25,11 @@
   const locationEl = document.getElementById("vehicleLocation");
   const backWrapperEl = document.getElementById("vehicleBackWrapper");
   const backLinkEl = document.getElementById("vehicleBackLink");
+  const canonicalLinkEl = document.getElementById("canonicalLink");
 
   const visibleThumbs = 4;
   const hiddenStartIndex = visibleThumbs - 1;
+  const siteUrl = "https://unomotors.uy";
 
   const specDefinitions = [
     { label: "Año", value: (vehicle) => String(vehicle.anio || "") },
@@ -166,6 +168,42 @@
     locationEl.textContent = hasLocation ? vehicle.ubicacion : "";
   }
 
+  function setMeta(selector, content) {
+    const element = document.querySelector(selector);
+    if (!element || !content) return;
+    element.setAttribute("content", content);
+  }
+
+  function updateSeoMeta(vehicle, titleParts) {
+    const absoluteUrl = new URL(window.location.pathname + window.location.search, siteUrl).href;
+    const imageSource =
+      vehicle.imagen_principal?.url ||
+      vehicle.imagen_principal?.src ||
+      "/assets/hero.jpg";
+    const absoluteImage = new URL(imageSource, siteUrl).href;
+    const description =
+      vehicle.seo?.description ||
+      `${titleParts} disponible en UnoMotors. Consultá precio, fotos, especificaciones y opciones de financiación.`;
+    const title = vehicle.seo?.title || `${titleParts} | UnoMotors`;
+
+    document.title = title;
+    canonicalLinkEl?.setAttribute("href", absoluteUrl);
+
+    setMeta('meta[name="description"]', description);
+    setMeta('meta[property="og:title"]', title);
+    setMeta('meta[property="og:description"]', description);
+    setMeta('meta[property="og:url"]', absoluteUrl);
+    setMeta('meta[property="og:image"]', absoluteImage);
+    setMeta('meta[property="og:image:secure_url"]', absoluteImage);
+    setMeta(
+      'meta[property="og:image:alt"]',
+      vehicle.imagen_principal?.alt || `${titleParts} disponible en UnoMotors`,
+    );
+    setMeta('meta[name="twitter:title"]', title);
+    setMeta('meta[name="twitter:description"]', description);
+    setMeta('meta[name="twitter:image"]', absoluteImage);
+  }
+
   function renderVehicle(vehicle) {
     const titleParts = [vehicle.marca, vehicle.modelo, vehicle.version]
       .filter(Boolean)
@@ -206,9 +244,7 @@
     backLinkEl.href = vehicle.cta?.volver_url || "../index.html";
     backLinkEl.textContent = vehicle.cta?.volver_texto || "← Volver al catálogo";
 
-    if (vehicle.seo?.title) {
-      document.title = vehicle.seo.title;
-    }
+    updateSeoMeta(vehicle, titleParts);
   }
 
   let vehicle = null;

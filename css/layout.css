@@ -38,7 +38,7 @@
 @media (max-width: 700px) {
   .section {
     padding-inline: 0;
-    padding-block: var(--space-lg);
+    padding-block: 2.75rem;
   }
   .section .container {
     padding-inline: var(--container-padding);

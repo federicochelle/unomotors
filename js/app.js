@@ -87,6 +87,11 @@ if (header && toggle && mobileMenu && overlay) {
 
   // Click en links del menú
   closeTargets.forEach((el) => el.addEventListener("click", closeMenu));
+  mobileMenu.addEventListener("click", (e) => {
+    if (e.target.closest("a[href]")) {
+      closeMenu();
+    }
+  });
 
   // ⬅️ CLICK AFUERA REAL
   document.addEventListener("click", (e) => {
