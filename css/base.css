@@ -1,31 +1,29 @@
 /* =====================================================
-   BASE.CSS — Núcleo de la librería
-   Reglas universales, neutras y estables
+   BASE.CSS — Núcleo compartido
 ===================================================== */
 
 /* =====================================================
    1. RESET / NORMALIZACIÓN
 ===================================================== */
 
-/* Box sizing consistente */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Eliminar márgenes por defecto */
 * {
   margin: 0;
 }
 
-/* Altura base correcta */
-html,
-body {
-  height: auto;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Medios responsivos */
+body {
+  min-height: 100dvh;
+}
+
 img,
 picture,
 video,
@@ -35,7 +33,6 @@ svg {
   max-width: 100%;
 }
 
-/* Formularios heredan tipografía */
 input,
 button,
 textarea,
@@ -43,67 +40,122 @@ select {
   font: inherit;
 }
 
-/* Evitar overflow de texto */
 p,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+li {
   overflow-wrap: break-word;
 }
 
-/* Quitar estilos de listas */
 ul,
 ol {
-  list-style: none;
   padding: 0;
 }
 
-/* Links base */
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 /* =====================================================
-   2. TOKENS GLOBALES (VARIABLES NEUTRAS)
+   2. TOKENS GLOBALES
 ===================================================== */
 
 :root {
-  /* Colores base */
-  --color-bg: #ffffff;
+  /* Colores */
+  --color-bg: #f0f1f2;
   --color-surface: #ffffff;
-  --color-text: #111111;
-  --color-text-muted: #555555;
-  --color-border: rgba(0, 0, 0, 0.12);
+  --color-surface-alt: #f7f9fb;
+  --color-text: #121418;
+  --color-text-muted: rgba(18, 20, 24, 0.62);
+  --color-text-subtle: rgba(18, 20, 24, 0.48);
+  --color-border: rgba(18, 20, 24, 0.1);
+  --color-border-strong: rgba(18, 20, 24, 0.16);
 
-  --color-primary: #333333;
-  --color-primary-dark: #111111;
+  --color-primary: #1f6feb;
+  --color-primary-dark: #1658bd;
+  --color-success: #2ea043;
+  --color-success-dark: #237d34;
+  --color-warning: #f2c100;
+  --color-warning-dark: #d6aa00;
+  --color-whatsapp: #25d366;
+  --color-inverse: #ffffff;
+  --color-overlay-strong: rgba(7, 12, 18, 0.68);
+
+  /* Alias de compatibilidad */
+  --brand-blue: var(--color-primary);
+  --brand-blue-dark: var(--color-primary-dark);
+  --brand-green: var(--color-success);
+  --brand-green-dark: var(--color-success-dark);
+  --brand-yellow: var(--color-warning);
+  --brand-yellow-dark: var(--color-warning-dark);
+  --text-muted: var(--color-text-muted);
 
   /* Tipografías */
-  --font-ui: "cutive", sans-serif;
+  --font-base: "Nunito", sans-serif;
+  --font-ui: "Montserrat", sans-serif;
+  --font-display: "Montserrat", sans-serif;
 
-  --font-display: "cutive", sans-serif;
-
-  /* Pesos */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --letter-spacing-wide: 0.08em;
+
+  /* Escala tipográfica */
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: clamp(1.25rem, 2vw, 1.6rem);
+  --text-xl: clamp(1.6rem, 3vw, 2.3rem);
+  --text-2xl: clamp(2rem, 4.5vw, 3.8rem);
+
+  --line-height-tight: 1.1;
+  --line-height-heading: 1.15;
+  --line-height-body: 1.65;
+
+  /* Spacing 4px base */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
 
   /* Radios */
+  --radius-xs: 3px;
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
+  --radius-pill: 999px;
 
-  /* Espaciados */
-  --space-2xs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 3rem;
-  --space-xl: 4rem;
+  /* Sombras */
+  --shadow-sm: 0 14px 30px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 22px 55px rgba(0, 0, 0, 0.14);
+
+  /* Contenedores */
+  --container-padding: 1rem;
+  --container-sm: 960px;
+  --container-md: 1200px;
+  --container-lg: 1400px;
+
+  /* Header / navegación */
+  --header-height: 68px;
+  --nav-offset: var(--header-height);
+  --header-bg: rgba(11, 15, 20, 0.95);
+
+  /* Breakpoints de referencia */
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 900px;
+  --breakpoint-xl: 1024px;
+  --breakpoint-2xl: 1200px;
 
   /* Transiciones */
   --transition-fast: 0.2s ease;
@@ -115,12 +167,12 @@ a {
 ===================================================== */
 
 body {
-  min-height: 100dvh;
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  font-family: var(--font-ui);
-  background: transparent;
+  background: var(--color-bg);
   color: var(--color-text);
+  font-family: var(--font-base);
+  font-size: var(--text-sm);
+  line-height: var(--line-height-body);
 }
 
 h1,
@@ -129,32 +181,44 @@ h3,
 h4,
 h5,
 h6 {
+  color: var(--color-text);
   font-family: var(--font-display);
   font-weight: var(--font-weight-bold);
-  line-height: 1.2;
-  color: var(--color-text);
+  letter-spacing: -0.5px;
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: var(--text-2xl);
+  line-height: var(--line-height-tight);
 }
 
 h2 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  text-decoration: underline;
+  font-size: var(--text-xl);
+  line-height: var(--line-height-tight);
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: var(--text-lg);
+  line-height: var(--line-height-heading);
 }
 
-p {
+h4,
+h5,
+h6 {
+  font-size: var(--text-md);
+  line-height: 1.25;
+}
+
+p,
+li {
   color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--line-height-body);
 }
 
 small {
-  font-size: 0.875rem;
   color: var(--color-text-muted);
+  font-size: var(--text-xs);
 }
 
 /* =====================================================
@@ -167,12 +231,11 @@ button {
   cursor: pointer;
 }
 
-/* Focus accesible */
+strong {
+  color: var(--color-text);
+}
+
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }
-
-/* =====================================================
-   FIN BASE.CSS
-===================================================== */

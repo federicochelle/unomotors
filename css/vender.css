@@ -3,8 +3,8 @@
 =================================== */
 
 .sell-subtitle {
-  margin-top: 0.7rem;
-  margin-bottom: 1rem;
+  margin-top: var(--space-2xs);
+  margin-bottom: var(--space-sm);
   font-weight: 500;
 }
 .sell-wrap {
@@ -24,7 +24,7 @@
 }
 
 .sell-media {
-  border-radius: 14px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(18, 20, 24, 0.08);
@@ -40,7 +40,7 @@
 /* Steps */
 .sell-steps {
   display: grid;
-  gap: 1rem;
+  gap: var(--space-sm);
   margin: 0;
   padding: 0;
 }
@@ -51,8 +51,8 @@
   gap: 0.9rem;
   align-items: start;
 
-  padding: 1rem;
-  border-radius: 14px;
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
   background: var(--color-surface);
   border: 1px solid rgba(18, 20, 24, 0.08);
   box-shadow: var(--shadow-sm);
@@ -79,7 +79,7 @@
 
 .sell-cta .btn {
   text-align: center;
-  margin: 1rem;
+  margin-top: var(--space-sm);
 }
 /* ===================================
    MOBILE: imagen como fondo + blur

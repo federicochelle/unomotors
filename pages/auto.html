@@ -3,17 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UnoMotors</title>
+    <title>Vehículo | UnoMotors</title>
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/auto.css" />
   </head>
   <body>
-    <!-- Header -->
     <header class="site-header">
       <div
         class="container container-wide flex flex-between flex-wrap header-inner"
       >
-        <!-- Brand -->
         <a
           class="brand brand-logo-only"
           href="../index.html#top"
@@ -29,7 +27,6 @@
           />
         </a>
 
-        <!-- Nav desktop -->
         <nav class="nav nav-desktop" aria-label="Navegación principal">
           <a class="nav-link" href="../index.html#catalogo">Catálogo</a>
           <a class="nav-link" href="financiacion.html">Financiacion</a>
@@ -37,11 +34,8 @@
           <a class="nav-link" href="consignacion.html">Consignaciones</a>
           <a class="nav-link" href="nosotros.html">Nosotros</a>
           <a class="nav-link" href="../index.html#contacto">Contacto</a>
-
-          <!-- CTA opcional -->
         </nav>
 
-        <!-- Botón hamburguesa (mobile) -->
         <button
           class="nav-toggle"
           type="button"
@@ -54,10 +48,8 @@
         </button>
       </div>
 
-      <!-- Overlay (mobile) -->
       <div class="menu-overlay" data-menu-close hidden></div>
 
-      <!-- Menú mobile -->
       <div class="mobile-menu" id="mobile-menu" hidden>
         <nav class="nav nav-mobile" aria-label="Menú móvil">
           <a class="nav-link" href="../index.html#catalogo">Catálogo</a>
@@ -69,191 +61,70 @@
         </nav>
       </div>
     </header>
+
     <main id="top" class="section" data-auto-page>
-      <div class="container">
-        <!-- Header -->
-        <header class="auto-head stack-xs">
-          <h1 class="auto-title">Volkswagen Suran <span> 2017</span></h1>
+      <div class="container auto-page-shell">
+        <article class="auto-sheet">
+          <header class="auto-head stack-xs" id="vehicleContent">
+            <h1 class="auto-title" id="vehicleTitle"></h1>
+            <h3 class="auto-price" id="vehiclePrice"></h3>
+            <p class="auto-subtitle" id="vehicleSubtitle" hidden></p>
+          </header>
 
-          <h3 class="auto-price">USD 14.500</h3>
-          <p class="auto-subtitle"></p>
-          <div class="auto-finance">
-            <span class="finance-label"></span>
+          <section class="auto-layout" id="vehicleLayout">
+            <div class="auto-gallery">
+              <img
+                id="autoHero"
+                class="auto-hero is-clickeable"
+                src=""
+                alt=""
+                loading="eager"
+              />
 
-            <div class="finance-logos">
-              <img src="../assets/miauto.png" alt="Banco" />
-              <img src="../assets/logo-cash.webp" alt="Visa" />
-              <img src="../assets/logonegro.png" alt="OCA" />
+              <div class="auto-thumbs" id="autoThumbs"></div>
             </div>
-          </div>
-        </header>
 
-        <section class="auto-layout">
-          <!-- Galería -->
-          <div class="auto-gallery">
-            <img
-              id="autoHero"
-              class="auto-hero is-clickeable"
-              src="../assets/vwsuran.webp"
-              alt="Fiat Mobi"
-              loading="eager"
-            />
+            <aside class="auto-specs">
+              <h2 class="section-title">Especificaciones</h2>
 
-            <div class="auto-thumbs" id="autoThumbs">
-              <img
-                class="thumb"
-                src="../assets/vwsuran/vw1.webp"
-                data-full="../assets/vwsuran/vw1.webp"
-                alt=""
-              />
+              <dl class="spec-list" id="vehicleSpecs"></dl>
 
-              <img
-                class="thumb"
-                src="../assets/vwsuran/vw2.webp"
-                data-full="../assets/vwsuran/vw2.webp"
-                alt=""
-              />
-
-              <img
-                class="thumb"
-                src="../assets/vwsuran/vw3.webp"
-                data-full="../assets/vwsuran/vw3.webp"
-                alt=""
-              />
-
-              <!-- miniatura con contador -->
-              <div class="thumb thumb-more">
-                <img
-                  src="../assets/vwsuran/vw4.webp"
-                  data-full="../assets/vwsuran/vw4.webp"
-                  alt=""
-                />
-                <span>+4</span>
+              <div class="auto-finance" id="vehicleFinance" hidden>
+                <span class="finance-label" id="vehicleFinanceLabel"></span>
+                <div class="finance-logos" id="vehicleFinanceLogos"></div>
               </div>
 
-              <!-- imágenes extra ocultas -->
-              <img
-                class="thumb thumb-hidden"
-                src="../assets/vwsuran/vw5.webp"
-                data-full="../assets/vwsuran/vw5.webp"
-                alt=""
-              />
+              <a
+                class="btn btn-green btn-full"
+                id="vehicleWhatsapp"
+                target="_blank"
+                rel="noopener"
+                href="#"
+              >
+                Consultar por WhatsApp
+              </a>
 
-              <img
-                class="thumb thumb-hidden"
-                src="../assets/vwsuran/vw6.webp"
-                data-full="../assets/vwsuran/vw6.webp"
-                alt=""
-              />
+              <p class="auto-note" id="vehicleNote" hidden></p>
+            </aside>
+          </section>
 
-              <img
-                class="thumb thumb-hidden"
-                src="../assets/vwsuran/vw7.webp"
-                data-full="../assets/vwsuran/vw7.webp"
-                alt=""
-              />
+          <section class="auto-description" id="vehicleDescriptionSection">
+            <div class="auto-description-content">
+              <h2 class="section-title">Descripción</h2>
+              <div id="vehicleDescription"></div>
+              <ul class="auto-features" id="vehicleFeatures" hidden></ul>
+              <p id="vehiclePhone" hidden></p>
+              <p id="vehicleLocation" hidden></p>
             </div>
-          </div>
+          </section>
+        </article>
 
-          <!-- Especificaciones -->
-          <aside class="auto-specs">
-            <h2 class="section-title">Especificaciones</h2>
-
-            <dl class="spec-list">
-              <div class="spec-item">
-                <dt>Año</dt>
-                <dd>2017</dd>
-              </div>
-
-              <div class="spec-item">
-                <dt>Kilómetros</dt>
-                <dd>129.000 km</dd>
-              </div>
-
-              <div class="spec-item">
-                <dt>Combustible</dt>
-                <dd>Nafta</dd>
-              </div>
-
-              <div class="spec-item">
-                <dt>Transmisión</dt>
-                <dd>Manual</dd>
-              </div>
-
-              <div class="spec-item">
-                <dt>Motor</dt>
-                <dd>1.6 Highline Msi 110cv</dd>
-              </div>
-
-              <div class="spec-item">
-                <dt>Color</dt>
-                <dd>Gris</dd>
-              </div>
-            </dl>
-
-            <a
-              class="btn btn-green btn-full"
-              target="_blank"
-              rel="noopener"
-              href="https://wa.me/59898137941?text=Hola,%20me%20interesa%20la%20VW%20Suran%202020"
-            >
-              Consultar por WhatsApp
-            </a>
-
-            <p class="auto-note">Respuesta en el día · Coordinamos visita</p>
-          </aside>
-        </section>
-        <section class="auto-description container container-wide">
-          <div class="auto-description-content">
-            <h2 class="section-title">Descripción</h2>
-            <p>
-              Volkswagen Suran Highline Extra Full en excelente estado, ideal
-              para quien busca espacio, confiabilidad y bajo consumo. Vehículo
-              súper versátil, cómodo para ciudad y ruta.
-            </p>
-
-            <p>Precio contado U$ 14.500 o entrega de U$ 9.000 y facilidades.</p>
-
-            <ul class="auto-features">
-              <li>Año 2017</li>
-              <li>Motor 1.6 MSI 110cv 16v</li>
-              <li>142.000 kms</li>
-              <li>Caja manual de 6ta</li>
-              <li>Llantas de aleación</li>
-              <li>Amplio baúl (440 lts)</li>
-              <li>Dirección eléctrica</li>
-              <li>Vidrios eléctricos</li>
-              <li>Aire acondicionado</li>
-              <li>Alarma volumétrica</li>
-              <li>Cierre centralizado</li>
-              <li>Airbags frontales</li>
-              <li>Frenos ABS + EBD</li>
-              <li>Control de tracción</li>
-              <li>Sistema multimedia Bluetooth</li>
-              <li>Sensores de estacionamiento (Parkpilot)</li>
-              <li>Volante de cuero multifunción</li>
-              <li>Sensores de lluvia</li>
-            </ul>
-
-            <p>
-              Impecable estado y con todos los papeles prontos para transferir.
-            </p>
-
-            <p><strong>Teléfono:</strong> 098 137 941</p>
-
-            <p>
-              Este vehículo se encuentra en Ancap Petrosur, Ruta 1 km 17.500
-              esquina Camino Manuel Flores, Montevideo.
-            </p>
-          </div>
-        </section>
-
-        <!-- Volver -->
-        <div class="back-link" style="margin-top: 1.5rem">
-          <a class="btn btn-blue" href="../index.html">← Volver al catálogo</a>
+        <div class="back-link" id="vehicleBackWrapper">
+          <a class="btn btn-blue" id="vehicleBackLink" href="../index.html">
+            ← Volver al catálogo
+          </a>
         </div>
 
-        <!-- LIGHTBOX / MODAL -->
         <div class="lightbox" id="lightbox" aria-hidden="true">
           <div class="lightbox-backdrop" data-close></div>
 
@@ -295,14 +166,28 @@
             <div class="lb-counter" id="lbCounter">0 / 0</div>
           </div>
         </div>
+
+        <section
+          class="auto-description"
+          id="vehicleNotFound"
+          hidden
+        >
+          <div class="auto-description-content stack-sm">
+            <h1 class="section-title">Vehículo no encontrado</h1>
+            <p>
+              No encontramos un vehículo publicado con ese identificador.
+            </p>
+            <div class="back-link">
+              <a class="btn btn-blue" href="../index.html">← Volver al catálogo</a>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
-    <!-- FOOTER -->
+
     <footer class="footer" id="footer">
       <div class="container container-wide footer-grid">
-        <!-- Marca -->
         <div class="footer-col footer-brand">
-          <!-- LOGO -->
           <a
             href="#top"
             class="footer-logo"
@@ -318,7 +203,6 @@
           </p>
         </div>
 
-        <!-- Navegación -->
         <div class="footer-col">
           <p class="footer-kicker">Explorar</p>
           <ul class="footer-links">
@@ -330,15 +214,14 @@
               <a class="nav-link" href="tasacion.html">Tasá tu vehiculo</a>
             </li>
             <li>
-              <a class="nav-link" href="consignaciones.html">Consignaciones</a>
+              <a class="nav-link" href="consignacion.html">Consignaciones</a>
             </li>
-            <li><a class="nav-link" href="quienes-somos.html">Nosotros</a></li>
+            <li><a class="nav-link" href="nosotros.html">Nosotros</a></li>
             <li><a class="nav-link" href="#footer">Contacto</a></li>
             <li><a href="#top">Volver arriba</a></li>
           </ul>
         </div>
 
-        <!-- Contacto -->
         <div class="footer-col">
           <p class="footer-kicker">Contacto</p>
           <ul class="footer-links">
@@ -367,7 +250,6 @@
         </div>
       </div>
 
-      <!-- Divider grande -->
       <div class="footer-separator"></div>
 
       <div class="container container-wide footer-bottom">
@@ -378,7 +260,6 @@
     </footer>
 
     <script>
-      // Año automático
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 
@@ -407,8 +288,14 @@
         />
       </svg>
     </a>
-    <script src="../js/app.js"></script>
 
+    <script src="../js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/vehicles-api.js"></script>
+    <script src="../js/vehicles.mock.js"></script>
     <script src="../js/lightbox.js"></script>
+    <script src="../js/vehicle-detail.js"></script>
   </body>
 </html>
