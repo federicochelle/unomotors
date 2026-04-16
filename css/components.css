@@ -11,18 +11,20 @@
    BUTTONS – BASE
 ========================= */
 
-.btn {
+.btn,
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--space-2xs);
   font-family: var(--font-ui);
-  padding: 0.55em 1.1em;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid transparent;
   border-radius: var(--radius-sm);
   cursor: pointer;
-
+  font-size: var(--text-sm);
   font-weight: var(--font-weight-bold);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   line-height: 1;
   white-space: nowrap;
 
@@ -36,7 +38,8 @@
 }
 
 /* Sensación de peso */
-.btn:active {
+.btn:active,
+.button:active {
   transform: translateY(1px);
 }
 
@@ -46,16 +49,14 @@
 
 .btn-primary {
   background: var(--color-primary);
-  color: #fff;
-  border: var(--color--a);
+  color: var(--color-inverse);
   box-shadow: var(--shadow-sm);
-  border-color: var(--color--a);
 }
 
 .btn-primary:hover {
   background: var(--color-primary-dark);
   box-shadow: var(--shadow-md);
-  color: #fff;
+  color: var(--color-inverse);
 }
 
 /* =========================
@@ -65,14 +66,17 @@
 .btn-outline {
   display: inline-flex;
   align-items: center;
-  padding: 0.8rem 1.8rem;
+  padding: 0.8rem 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
+  color: var(--color-inverse);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
+  transition:
+    transform var(--transition-base),
+    background var(--transition-base),
+    border-color var(--transition-base);
   white-space: nowrap;
 }
 
@@ -117,8 +121,8 @@ svg {
 .card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
+  border-radius: var(--radius-xs);
+  padding: var(--space-lg);
   box-shadow: var(--shadow-sm);
 }
 
@@ -134,7 +138,7 @@ svg {
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: var(--space-2xs);
 }
 
 .chip {
@@ -143,7 +147,7 @@ svg {
   border: 1px solid var(--color-border);
   background: rgba(0, 0, 0, 0.04);
   color: var(--color-text);
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
 
   transition:
     background var(--transition-fast),
@@ -166,7 +170,7 @@ svg {
 
 .gallery-grid {
   display: grid;
-  gap: 0.9rem;
+  gap: var(--space-sm);
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -185,9 +189,7 @@ svg {
 .gallery-item {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  background: rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius-sm);
   cursor: pointer;
 }
 
@@ -207,15 +209,92 @@ svg {
   left: 10px;
   bottom: 10px;
   padding: 0.35rem 0.6rem;
-  border-radius: 0;
+  border-radius: var(--radius-xs);
   background: rgba(0, 0, 0, 0.65);
-  color: #fff;
-  font-size: 0.85rem;
+  color: var(--color-inverse);
+  font-size: var(--text-xs);
 }
 
 /* =========================
    CONTACTO
 ========================= */
+
+@keyframes loader-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loader-logo-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loader-text-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b1f3a;
+  z-index: 20000;
+  opacity: 1;
+  visibility: visible;
+}
+
+.skip-loader .loader {
+  display: none;
+}
+
+.loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+.loader-content {
+  text-align: center;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+.loader-logo {
+  width: clamp(260px, 35vw, 520px);
+  max-width: 90%;
+  height: auto;
+  margin-inline: auto;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: loader-logo-in 1.2s ease forwards;
+}
+
+.loader-text {
+  margin: 1.5rem 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: loader-text-in 1s ease forwards;
+  animation-delay: 1.2s;
+}
 
 .contact-grid {
   display: grid;
@@ -232,7 +311,7 @@ svg {
 .contact-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: var(--space-xs);
 }
 
 .contact-list strong {
@@ -256,45 +335,120 @@ svg {
    WHATSAPP STICKY BUTTON
 ========================= */
 
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.whatsapp-btn,
 .whatsapp-sticky {
   position: fixed;
   right: 1.2rem;
   bottom: 3.2rem;
-
   width: 56px;
   height: 56px;
-
+  position: fixed;
+  isolation: isolate;
   border-radius: 50%;
-  background: #25d366;
-  color: #fff;
-
-  display: grid;
-  place-items: center;
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  z-index: 300;
-
+  background: var(--color-whatsapp);
+  color: var(--color-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
   transition:
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast);
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.whatsapp-sticky:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
+.whatsapp-btn::before,
+.whatsapp-sticky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.4);
+  z-index: -1;
+  animation: whatsapp-pulse 2s ease-out infinite;
+  animation-delay: 2.5s;
+  pointer-events: none;
 }
 
+.whatsapp-btn::after,
+.whatsapp-sticky::after {
+  content: "Escribinos";
+  position: absolute;
+  right: calc(100% + 0.8rem);
+  top: 50%;
+  transform: translateY(calc(-50% + 6px));
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius-sm);
+  background: #111111;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.whatsapp-btn:hover,
+.whatsapp-btn:focus-visible,
+.whatsapp-sticky:hover,
+.whatsapp-sticky:focus-visible {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.whatsapp-btn:hover::after,
+.whatsapp-btn:focus-visible::after,
+.whatsapp-sticky:hover::after,
+.whatsapp-sticky:focus-visible::after {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.whatsapp-btn svg,
 .whatsapp-sticky svg {
   width: 40px;
   height: 40px;
 }
 
 @media (max-width: 600px) {
+  .whatsapp-btn,
   .whatsapp-sticky {
     width: 52px;
     height: 52px;
     right: 1rem;
     bottom: 3rem;
+  }
+
+  .whatsapp-btn::after,
+  .whatsapp-sticky::after {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: calc(100% + 0.75rem);
+    transform: translateX(-50%) translateY(6px);
+  }
+
+  .whatsapp-btn:hover::after,
+  .whatsapp-btn:focus-visible::after,
+  .whatsapp-sticky:hover::after,
+  .whatsapp-sticky:focus-visible::after {
+    transform: translateX(-50%) translateY(0);
   }
 }
 
@@ -305,12 +459,12 @@ svg {
 .footer {
   background: #0f1115;
   color: rgba(255, 255, 255, 0.85);
-  padding: 4rem 0 2rem;
+  padding: var(--space-2xl) 0 var(--space-lg);
 }
 
 .footer-grid {
   display: grid;
-  gap: 3rem;
+  gap: var(--space-xl);
 }
 
 /* Desktop 3 columnas */
@@ -379,7 +533,7 @@ svg {
 
 .footer-separator {
   height: 1px;
-  margin: 3rem 0 2rem;
+  margin: var(--space-xl) 0 var(--space-lg);
   background: rgba(255, 255, 255, 0.08);
 }
 

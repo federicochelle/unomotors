@@ -114,7 +114,7 @@
 .tasacion-card {
   position: relative;
   padding: clamp(1.5rem, 2vw, 2rem);
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   border: 1px solid rgba(18, 20, 24, 0.08);
   background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow-sm);
@@ -138,7 +138,7 @@
   height: 64px;
   display: grid;
   place-items: center;
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   background: rgba(31, 111, 235, 0.08);
   color: var(--brand-blue);
   font-size: 1.7rem;
@@ -179,7 +179,7 @@
 .tasacion-step {
   position: relative;
   padding: 1.5rem;
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   background: var(--color-surface);
   border: 1px solid rgba(18, 20, 24, 0.08);
   box-shadow: var(--shadow-sm);
@@ -228,7 +228,7 @@
 
 .tasacion-final-card {
   padding: clamp(1.75rem, 4vw, 3rem);
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   background: linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
   border: 1px solid rgba(18, 20, 24, 0.08);
   box-shadow: var(--shadow-md);
@@ -282,7 +282,7 @@
         rgba(10, 16, 24, 0.56) 0%,
         rgba(10, 16, 24, 0.64) 100%
       ),
-      url("../../assets/vender.jpeg") center center / cover no-repeat;
+      url("../assets/vender.jpeg") center center / cover no-repeat;
   }
 
   .tasacion-hero-content {
@@ -312,6 +312,6 @@
   .tasacion-card,
   .tasacion-step,
   .tasacion-final-card {
-    border-radius: 3px;
+    border-radius: var(--radius-xs);
   }
 }

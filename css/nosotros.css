@@ -138,7 +138,7 @@
 .contact-map-card {
   margin: 0;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   border: 1px solid rgba(18, 20, 24, 0.08);
   box-shadow: var(--shadow-md);
   background: #fff;
@@ -156,7 +156,7 @@
 .contact-info {
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(18, 20, 24, 0.08);
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   box-shadow: var(--shadow-sm);
   padding: clamp(1.5rem, 3vw, 2rem);
 }

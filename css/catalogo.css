@@ -1,178 +1,82 @@
 /* =========================
-   FILTROS CATÁLOGO
+   CATALOGO
 ========================= */
 
-.filters-box {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 3px;
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
+#catalogo {
+  margin-top: 0;
+  padding-block: clamp(2.5rem, 4vw, 3rem);
+  background: #f7f8fa;
 }
 
-/* ===== Summary ===== */
+#catalogo .container.catalog-layout {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.header-catalogo {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 600px;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.header-catalogo .section-title {
+  color: #111111;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  font-weight: 800;
+  text-align: left;
+}
+
+.header-catalogo .section-subtitle {
+  max-width: 600px;
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.8);
+}
+
+.filters-box {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-sm);
+}
 
 .filters-summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 1rem 1.25rem;
-  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+  padding: var(--space-sm) 1.25rem;
+  font-weight: var(--font-weight-semibold);
 }
 
 .filters-summary::-webkit-details-marker {
   display: none;
 }
 
-/* Flecha */
 .filters-summary::after {
   content: "▾";
   font-size: 0.9rem;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-base);
 }
 
 .filters-box[open] .filters-summary::after {
   transform: rotate(180deg);
 }
 
-/* =========================
-   ANIMACIÓN SUAVE
-========================= */
-
-.filters-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition:
-    grid-template-rows 0.35s ease,
-    opacity 0.25s ease;
-  opacity: 0;
-}
-
-.filters-content > * {
-  overflow: hidden;
-}
-
-.filters-box[open] .filters-content {
-  grid-template-rows: 1fr;
-  opacity: 1;
-}
-
-/* =========================
-   GRID FILTROS
-========================= */
-
-.filters {
-  padding: 1.25rem;
-}
-
-.filters-grid {
-  display: grid;
-  gap: 1.25rem;
-}
-.filters-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-/* Desktop grid */
-@media (min-width: 768px) {
-  .filters-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-/* =========================
-   CAMPOS
-========================= */
-
-.filter {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.filter label {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
-}
-
-.filter select {
-  padding: 0.65rem 0.9rem;
-  border-radius: 10px;
-  border: 1px solid var(--color-border);
-  background: #fff;
-  font-family: var(--font-ui);
-  font-size: 0.9rem;
-  transition:
-    border 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.filter select:focus {
-  outline: none;
-  border-color: var(--brand-blue);
-  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.15);
-}
-
-/* Botón */
-.filter-actions {
-  display: flex;
-  align-items: flex-end;
-}
-
-/* =========================
-   DESKTOP → ABIERTO SIEMPRE
-========================= */
-
-@media (min-width: 1024px) {
-  .filters-box {
-    border-radius: 3px;
-  }
-
-  .filters-box .filters-summary {
-    display: none; /* ocultamos botón */
-  }
-
-  .filters-box {
-    open: true; /* NO funciona solo con CSS */
-  }
-
-  .filters-content {
-    grid-template-rows: 1fr;
-    opacity: 1;
-  }
-}
-
-/* ✅ Evita que el grid empuje y se salga del box */
 .filters-content,
 .filters-grid,
 .filter,
 .filter-actions {
   min-width: 0;
 }
-
-/* ✅ Si el details/box tiene padding grande, esto lo estabiliza */
-.filters-box {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden; /* que nada se salga visualmente */
-}
-
-/* ✅ Los selects siempre dentro */
-.filter select {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-}
-
-/* (Opcional) si querés aire sin romper el ancho */
-.filters-content {
-  padding: var(--space-sm);
-}
-/* =========================
-   ANIMACIÓN SUAVE REAL
-========================= */
 
 .filters-content {
   overflow: hidden;
@@ -183,147 +87,303 @@
     opacity 0.25s ease;
 }
 
-/* Cuando está abierto */
 .filters-box[open] .filters-content {
-  max-height: 1000px; /* suficientemente grande */
+  max-height: 1000px;
   opacity: 1;
 }
 
-/* Desktop: no se ve la caja, solo el contenido */
+.filters {
+  padding: 1.25rem;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.filter label {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.filter select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-family: var(--font-base);
+  font-size: 0.9rem;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.filter select:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.15);
+}
+
+.filter-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+.gallery-grid {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: min(100vw, 1680px);
+  margin-left: calc(50% - 50vw);
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+.gallery-item {
+  min-width: 0;
+}
+
+.car-card-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.car-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  transition: transform 0.3s ease;
+}
+
+.car-media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 4.35;
+  background: rgba(18, 20, 24, 0.04);
+}
+
+.car-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(7, 12, 18, 0.22) 0%,
+      rgba(7, 12, 18, 0.04) 48%,
+      rgba(7, 12, 18, 0) 100%
+    );
+  pointer-events: none;
+}
+
+.car-media > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+
+.car-card-link:hover .car-card,
+.car-card-link:focus-visible .car-card {
+  transform: translateY(-3px);
+}
+
+.car-card-link:hover .car-media > img,
+.car-card-link:focus-visible .car-media > img {
+  transform: scale(1.03);
+}
+
+.car-card-body {
+  padding: 0.9rem 0.9rem 0.95rem;
+  min-width: 0;
+  background: var(--color-surface);
+}
+
+.car-card-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 0.9rem;
+  min-width: 0;
+}
+
+.car-copy {
+  min-width: 0;
+}
+
+.car-card-aside {
+  display: grid;
+  justify-items: end;
+  align-content: start;
+  gap: 0.45rem;
+}
+
+.car-title {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(1.12rem, 1.32vw, 1.24rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+.car-year {
+  margin: 0.35rem 0 0;
+  color: var(--color-text-subtle);
+  font-size: 0.82rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.09em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.car-price {
+  margin: 0;
+  color: var(--brand-green);
+  font-size: clamp(1.02rem, 1.12vw, 1.12rem);
+  font-weight: var(--font-weight-bold);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.car-finance {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.car-finance__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.9rem;
+  min-height: 1rem;
+  padding: 0;
+}
+
+.car-finance img {
+  width: auto;
+  max-width: 2.8rem;
+  height: 0.95rem;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .filters-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1100px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin-left: 0;
+    padding-inline: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  #catalogo {
+    margin-top: 0;
+    padding-block: 2.5rem;
+  }
+
+  .header-catalogo {
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .header-catalogo .section-title {
+    font-size: clamp(1.7rem, 8vw, 2.35rem);
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-left: 0;
+    padding-inline: 0;
+  }
+
+  .car-media {
+    aspect-ratio: 4 / 4.7;
+  }
+
+  .car-card-body {
+    padding: 0.9rem;
+  }
+
+  .car-card-main {
+    column-gap: 0.8rem;
+  }
+
+  .car-title {
+    font-size: 1.12rem;
+  }
+
+  .car-price {
+    font-size: 1rem;
+  }
+
+  .car-card-aside {
+    gap: 0.5rem;
+  }
+
+  .car-finance {
+    gap: 0.35rem;
+  }
+
+  .car-finance__logo {
+    min-width: 1.8rem;
+  }
+
+  .car-finance img {
+    max-width: 2.45rem;
+    height: 0.9rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .filters-box {
-    border: 0;
-    padding: 0;
     background: transparent;
+    border: 0;
     box-shadow: none;
   }
 
   .filters-summary {
-    display: none; /* desaparece el “Filtros” */
+    display: none;
   }
 
   .filters-content {
-    display: block !important; /* siempre visible */
-    max-height: none !important;
-    overflow: visible !important;
-    padding: 0 !important;
+    display: block;
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
   }
-}
 
-/* =========================
-   GRID
-========================= */
-
-.gallery-grid {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-@media (min-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .filters {
+    padding: 0;
   }
-}
-
-@media (min-width: 1200px) {
-  .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* =========================
-   GRID
-========================= */
-
-.gallery-grid {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* =========================
-   CARD SOLO IMAGEN
-========================= */
-
-.car-card {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.car-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.car-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
-}
-
-/* =========================
-   CONTENEDOR CARD
-========================= */
-
-.gallery-item {
-  position: relative;
-  padding-top: 28px; /* espacio para los logos */
-}
-
-/* =========================
-   LOGOS FINANCIACIÓN
-========================= */
-
-.car-finance {
-  position: absolute;
-  flex-direction: row;
-  justify-content: center;
-  top: 0;
-  left: 12px;
-
-  display: flex;
-  gap: 8px;
-
-  z-index: 10;
-}
-.car-finance {
-  position: absolute;
-
-  top: 0;
-  right: 12px; /* ← antes estaba left */
-
-  display: flex;
-  gap: 8px;
-
-  z-index: 10;
-}
-
-.car-finance img {
-  height: 29px;
-  width: auto;
-
-  background: none;
-  padding: 4px 6px;
-
-  border-radius: 6px;
 }

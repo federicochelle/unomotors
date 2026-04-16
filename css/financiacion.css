@@ -1,8 +1,8 @@
 .financing-kicker,
 .financing-section-label,
 .financing-card-kicker {
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  font-size: var(--text-xs);
+  letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -10,39 +10,6 @@
 .financing-lead {
   font-size: 1.05rem;
   color: var(--color-text);
-}
-
-.financing-grid {
-  align-items: stretch;
-}
-
-.financing-card {
-  height: 100%;
-}
-
-.financing-card strong {
-  color: var(--color-text);
-}
-
-.financing-list {
-  list-style: disc;
-  padding-left: 1.2rem;
-}
-
-.financing-list li {
-  color: var(--color-text-muted);
-}
-
-.financing-list li + li {
-  margin-top: 0.35rem;
-}
-
-.financing-section-alt {
-  background: rgba(0, 0, 0, 0.025);
-}
-
-.financing-cta {
-  padding: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .financing-outline {
@@ -59,16 +26,20 @@
   transform: translateY(-2px);
 }
 
-.financing-section-label,
-.financing-card-kicker {
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
 .financing-section-alt {
   background: rgba(0, 0, 0, 0.025);
+}
+
+.financing-cta {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.financing-grid {
+  align-items: stretch;
+}
+
+.financing-card {
+  height: 100%;
 }
 
 .financing-rows {
@@ -146,5 +117,5 @@
   }
 }
 #autos {
-  margin-top: 4rem;
+  margin-top: 0;
 }

@@ -9,18 +9,18 @@
 /* Contenedor principal */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-md);
   margin-inline: auto;
-  padding-inline: var(--space-sm);
+  padding-inline: var(--container-padding);
 }
 
 /* Variantes opcionales */
 .container-narrow {
-  max-width: 960px;
+  max-width: var(--container-sm);
 }
 
 .container-wide {
-  max-width: 1400px;
+  max-width: var(--container-lg);
 }
 
 /* =========================
@@ -28,21 +28,20 @@
 ========================= */
 
 .section {
-  padding-block: var(--space-xl);
+  padding-block: var(--space-2xl);
 }
 
 .section .container {
-  padding-inline: 2rem; /* margen visual cómodo */
+  padding-inline: max(var(--container-padding), var(--space-sm));
 }
 
 @media (max-width: 700px) {
   .section {
     padding-inline: 0;
-    padding: 1rem;
-    padding-top: 2rem;
+    padding-block: var(--space-lg);
   }
   .section .container {
-    padding-inline: 0; /* margen visual cómodo */
+    padding-inline: var(--container-padding);
   }
 }
 /* =========================
@@ -153,7 +152,7 @@
   width: 100%;
   height: 1px;
   background: var(--color-border);
-  margin-block: var(--space-lg);
+  margin-block: var(--space-xl);
 }
 
 /* =========================

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Nunito:wght@400;600;700&display=swap");
+
 /* =========================
    1. BASE (reset + variables)
 ========================= */
@@ -27,56 +29,27 @@
 ========================= */
 @import "overrides.css";
 
-/* ==============================
-   GLOBAL TYPOGRAPHY SCALE TEST
-============================== */
-
-/* ==============================
-   TYPOGRAPHY SCALE
-============================== */
-
-h1 {
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem) !important;
-  line-height: 1.1;
+.section-title {
+  font-size: var(--text-xl);
+  line-height: var(--line-height-tight);
 }
 
-h2 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem) !important;
-  line-height: 1.15;
+.section-subtitle {
+  font-size: var(--text-md);
+  line-height: 1.55;
+  max-width: 62ch;
 }
 
-h3 {
-  font-size: clamp(1.25rem, 2vw, 1.6rem) !important;
-  line-height: 1.2;
-}
-
-h4 {
-  font-size: clamp(1.1rem, 1.5vw, 1.3rem) !important;
-  line-height: 1.25;
-}
-
-h5 {
-  font-size: 1rem !important;
-  line-height: 1.3;
-}
-
-h6 {
-  font-size: 1rem;
-  line-height: 1.35;
-}
-
-/* Texto base */
-
-p {
-  font-size: 1rem;
-  line-height: 1.65 !important;
-}
-
-li {
-  font-size: 1rem !important;
-  line-height: 1.6;
-}
-
-small {
-  font-size: 0.85rem !important;
+.hero .text-muted:empty,
+.auto-subtitle:empty,
+.consign-kicker:empty,
+.about-kicker:empty,
+.about-section-kicker:empty,
+.tasacion-kicker:empty,
+.consign-hero-text:empty,
+.tasacion-hero-text:empty,
+.consign-hero-actions:empty,
+.contact-phone:empty,
+.contact-note:empty {
+  display: none;
 }

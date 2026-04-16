@@ -92,7 +92,7 @@
 .about-story-media,
 .about-service-media,
 .about-values-media {
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   overflow: hidden;
   border: 1px solid rgba(18, 20, 24, 0.08);
   box-shadow: var(--shadow-md);
@@ -198,7 +198,7 @@
   gap: 1rem;
   align-items: start;
   padding: 1.1rem 1.1rem;
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(18, 20, 24, 0.08);
   box-shadow: var(--shadow-sm);
@@ -233,7 +233,7 @@
 
 .about-final-card {
   padding: clamp(1.8rem, 4vw, 3rem);
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   background: #fff;
   border: 1px solid rgba(18, 20, 24, 0.08);
   box-shadow: var(--shadow-md);

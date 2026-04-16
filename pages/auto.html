@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vehículo | UnoMotors</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/auto.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div
+        class="container container-wide flex flex-between flex-wrap header-inner"
+      >
+        <a
+          class="brand brand-logo-only"
+          href="../index.html#top"
+          aria-label="Ir al inicio"
+        >
+          <img
+            class="brand-logo"
+            src="../assets/logonegro.png"
+            alt="UnoMotors"
+            width="44"
+            height="44"
+            loading="eager"
+          />
+        </a>
+
+        <nav class="nav nav-desktop" aria-label="Navegación principal">
+          <a class="nav-link" href="../index.html#catalogo">Catálogo</a>
+          <a class="nav-link" href="financiacion.html">Financiacion</a>
+          <a class="nav-link" href="tasacion.html">Tasá tu vehiculo</a>
+          <a class="nav-link" href="consignacion.html">Consignaciones</a>
+          <a class="nav-link" href="nosotros.html">Nosotros</a>
+          <a class="nav-link" href="../index.html#contacto">Contacto</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-menu-toggle
+        >
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="menu-overlay" data-menu-close hidden></div>
+
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav class="nav nav-mobile" aria-label="Menú móvil">
+          <a class="nav-link" href="../index.html#catalogo">Catálogo</a>
+          <a class="nav-link" href="financiacion.html">Financiacion</a>
+          <a class="nav-link" href="tasacion.html">Tasá tu vehiculo</a>
+          <a class="nav-link" href="consignacion.html">Consignaciones</a>
+          <a class="nav-link" href="nosotros.html">Nosotros</a>
+          <a class="nav-link" href="../index.html#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="section" data-auto-page>
+      <div class="container auto-page-shell">
+        <article class="auto-sheet">
+          <header class="auto-head stack-xs" id="vehicleContent">
+            <h1 class="auto-title" id="vehicleTitle"></h1>
+            <h3 class="auto-price" id="vehiclePrice"></h3>
+            <p class="auto-subtitle" id="vehicleSubtitle" hidden></p>
+          </header>
+
+          <section class="auto-layout" id="vehicleLayout">
+            <div class="auto-gallery">
+              <img
+                id="autoHero"
+                class="auto-hero is-clickeable"
+                src=""
+                alt=""
+                loading="eager"
+              />
+
+              <div class="auto-thumbs" id="autoThumbs"></div>
+            </div>
+
+            <aside class="auto-specs">
+              <h2 class="section-title">Especificaciones</h2>
+
+              <dl class="spec-list" id="vehicleSpecs"></dl>
+
+              <div class="auto-finance" id="vehicleFinance" hidden>
+                <span class="finance-label" id="vehicleFinanceLabel"></span>
+                <div class="finance-logos" id="vehicleFinanceLogos"></div>
+              </div>
+
+              <a
+                class="btn btn-green btn-full"
+                id="vehicleWhatsapp"
+                target="_blank"
+                rel="noopener"
+                href="#"
+              >
+                Consultar por WhatsApp
+              </a>
+
+              <p class="auto-note" id="vehicleNote" hidden></p>
+            </aside>
+          </section>
+
+          <section class="auto-description" id="vehicleDescriptionSection">
+            <div class="auto-description-content">
+              <h2 class="section-title">Descripción</h2>
+              <div id="vehicleDescription"></div>
+              <ul class="auto-features" id="vehicleFeatures" hidden></ul>
+              <p id="vehiclePhone" hidden></p>
+              <p id="vehicleLocation" hidden></p>
+            </div>
+          </section>
+        </article>
+
+        <div class="back-link" id="vehicleBackWrapper">
+          <a class="btn btn-blue" id="vehicleBackLink" href="../index.html">
+            ← Volver al catálogo
+          </a>
+        </div>
+
+        <div class="lightbox" id="lightbox" aria-hidden="true">
+          <div class="lightbox-backdrop" data-close></div>
+
+          <div
+            class="lightbox-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Galería de fotos"
+          >
+            <button
+              class="lb-close"
+              type="button"
+              data-close
+              aria-label="Cerrar"
+            >
+              ✕
+            </button>
+
+            <button
+              class="lb-nav lb-prev"
+              type="button"
+              id="lbPrev"
+              aria-label="Foto anterior"
+            >
+              ‹
+            </button>
+
+            <button
+              class="lb-nav lb-next"
+              type="button"
+              id="lbNext"
+              aria-label="Foto siguiente"
+            >
+              ›
+            </button>
+
+            <img class="lb-image" id="lbImage" alt="" />
+
+            <div class="lb-counter" id="lbCounter">0 / 0</div>
+          </div>
+        </div>
+
+        <section
+          class="auto-description"
+          id="vehicleNotFound"
+          hidden
+        >
+          <div class="auto-description-content stack-sm">
+            <h1 class="section-title">Vehículo no encontrado</h1>
+            <p>
+              No encontramos un vehículo publicado con ese identificador.
+            </p>
+            <div class="back-link">
+              <a class="btn btn-blue" href="../index.html">← Volver al catálogo</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="container container-wide footer-grid">
+        <div class="footer-col footer-brand">
+          <a
+            href="#top"
+            class="footer-logo"
+            aria-label="UnoMotors - Ir al inicio"
+          >
+            <img src="../assets/logo.png" alt="UnoMotors Automóviles" />
+          </a>
+
+          <p class="footer-text">
+            Compra y venta de usados con atención personalizada. Te ayudamos a
+            encontrar tu próximo auto y a vender el tuyo con una tasación
+            rápida.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-kicker">Explorar</p>
+          <ul class="footer-links">
+            <li><a class="nav-link" href="../index.html">Catálogo</a></li>
+            <li>
+              <a class="nav-link" href="financiacion.html">Financiacion</a>
+            </li>
+            <li>
+              <a class="nav-link" href="tasacion.html">Tasá tu vehiculo</a>
+            </li>
+            <li>
+              <a class="nav-link" href="consignacion.html">Consignaciones</a>
+            </li>
+            <li><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li><a class="nav-link" href="#footer">Contacto</a></li>
+            <li><a href="#top">Volver arriba</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-kicker">Contacto</p>
+          <ul class="footer-links">
+            <li>
+              <a
+                href="https://wa.me/59898137941?text=Hola%20UnoMotors,%20estoy%20interesado%20en%20uno%20de%20los%20veh%C3%ADculos%20publicados%20en%20la%20web.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20y%20disponibilidad%3F%20Gracias."
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp: +598 98 137 941
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:contacto@unomotors.com">contacto@unomotors.com</a>
+            </li>
+            <li>
+              <span
+                class="footer-text"
+                style="display: block; margin-top: 0.25rem"
+              >
+                Montevideo, Uruguay
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-separator"></div>
+
+      <div class="container container-wide footer-bottom">
+        <p class="footer-copy">
+          © <span id="year"></span> UnoMotors Automóviles
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <a
+      href="https://wa.me/59898137941?text=Hola%20UnoMotors,%20estoy%20interesado%20en%20uno%20de%20los%20veh%C3%ADculos%20publicados%20en%20la%20web.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20y%20disponibilidad%3F%20Gracias."
+      class="whatsapp-sticky"
+      target="_blank"
+      rel="noopener"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg
+        class="btn-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+        <path
+          d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+        />
+      </svg>
+    </a>
+
+    <script src="../js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/vehicles-api.js"></script>
+    <script src="../js/vehicles.mock.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/vehicle-detail.js"></script>
+  </body>
+</html>
