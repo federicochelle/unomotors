@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
 
   window.setTimeout(() => {
     loader.classList.add("hide");
-  }, 4000);
+  }, 3000);
 });
 
 if (header?.classList.contains("site-header--overlay")) {

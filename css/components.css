@@ -240,6 +240,12 @@ svg {
   }
 }
 
+@keyframes loader-progress-fill {
+  to {
+    transform: scaleX(1);
+  }
+}
+
 .loader {
   position: fixed;
   inset: 0;
@@ -294,6 +300,27 @@ svg {
   transform: translateY(20px);
   animation: loader-text-in 1s ease forwards;
   animation-delay: 1.2s;
+}
+
+.loader-progress {
+  width: min(320px, 70vw);
+  height: 6px;
+  margin: 1.75rem auto 0;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.loader-progress__bar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--brand-yellow);
+  box-shadow: 0 0 18px rgba(242, 193, 0, 0.45);
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: loader-progress-fill 3s linear forwards;
 }
 
 .contact-grid {
