@@ -83,33 +83,30 @@
 
   async function load() {
     // opcional: skeleton simple
-    grid.innerHTML = <p class="text-muted">Cargando vehículos...</p>;
+    grid.innerHTML = '<p class="text-muted">Cargando vehículos...</p>';
 
     try {
       const r = await fetch(API, { method: "GET" });
       const data = await r.json();
 
       if (!r.ok || !data?.ok) {
-        grid.innerHTML = (
-          <p class="text-muted">No se pudo cargar el catálogo.</p>
-        );
+        grid.innerHTML =
+          '<p class="text-muted">No se pudo cargar el catálogo.</p>';
         return;
       }
 
       const items = Array.isArray(data.results) ? data.results : [];
 
       if (!items.length) {
-        grid.innerHTML = (
-          <p class="text-muted">Todavía no hay vehículos publicados.</p>
-        );
+        grid.innerHTML =
+          '<p class="text-muted">Todavía no hay vehículos publicados.</p>';
         return;
       }
 
       grid.innerHTML = items.map(buildCardHTML).join("");
     } catch (e) {
-      grid.innerHTML = (
-        <p class="text-muted">Error de red cargando el catálogo.</p>
-      );
+      grid.innerHTML =
+        '<p class="text-muted">Error de red cargando el catálogo.</p>';
     }
   }
 
